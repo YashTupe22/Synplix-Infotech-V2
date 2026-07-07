@@ -43,13 +43,13 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
           : "bg-transparent",
       )}
     >
-      <div className="container flex items-center justify-between py-4 lg:py-5">
-        <Link to="/" className="flex items-center gap-2 font-medium tracking-tight text-foreground">
+      <div className="container flex items-center justify-between py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:py-5">
+        <Link to="/" className="flex items-center gap-2 font-medium tracking-tight text-foreground lg:justify-self-start">
           <img src={logo} alt="Synplix Infotech" className="h-8 w-auto" />
         </Link>
 
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center justify-center gap-8 lg:justify-self-center">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
@@ -66,7 +66,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 lg:justify-self-end">
           {/* Currency toggle */}
           <button
             type="button"
