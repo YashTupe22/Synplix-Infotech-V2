@@ -1,36 +1,62 @@
-export const webpagePlans = [
+export type PriceValue = number | "custom";
+
+export interface WebPlan {
+  name: string;
+  price: PriceValue;
+  cadence: string;
+  highlighted?: boolean;
+  features: string[];
+}
+
+export interface ContentPlan {
+  name: string;
+  price: PriceValue;
+  cadence: string;
+  highlighted?: boolean;
+  features: string[];
+}
+
+export interface SaasPlan {
+  name: string;
+  monthly: PriceValue;
+  annual: PriceValue;
+  note: string;
+  highlighted?: boolean;
+}
+
+export const webpagePlans: WebPlan[] = [
   {
     name: "Starter",
-    price: "₹8,000",
+    price: 8000,
     cadence: "one-time",
     features: ["Up to 5 pages", "Responsive layout", "Contact form", "Basic SEO", "1 revision round"],
   },
   {
     name: "Growth",
-    price: "₹18,000",
+    price: 18000,
     cadence: "one-time",
     highlighted: true,
     features: ["Up to 15 pages", "Custom interactions", "CMS integration", "Analytics setup", "3 revision rounds"],
   },
   {
     name: "Enterprise",
-    price: "Custom",
+    price: "custom",
     cadence: "on request",
     features: ["Unlimited pages", "Custom portals", "API integrations", "Priority support", "Dedicated PM"],
   },
 ];
 
-export const contentPlans = [
-  { name: "Basic", price: "₹5,000", cadence: "/month", features: ["8 social posts", "2 blog articles", "Caption copy", "Content calendar"] },
-  { name: "Pro", price: "₹12,000", cadence: "/month", highlighted: true, features: ["20 social posts", "4 blog articles", "Newsletter copy", "SEO optimization"] },
-  { name: "Agency", price: "₹25,000", cadence: "/month", features: ["High-output publishing", "Landing page copy", "Ad copywriting", "Weekly reporting"] },
+export const contentPlans: ContentPlan[] = [
+  { name: "Basic", price: 5000, cadence: "/month", features: ["8 social posts", "2 blog articles", "Caption copy", "Content calendar"] },
+  { name: "Pro", price: 12000, cadence: "/month", highlighted: true, features: ["20 social posts", "4 blog articles", "Newsletter copy", "SEO optimization"] },
+  { name: "Agency", price: 25000, cadence: "/month", features: ["High-output publishing", "Landing page copy", "Ad copywriting", "Weekly reporting"] },
 ];
 
-export const saasPlans = [
-  { name: "Free", monthly: "₹0", annual: "—", note: "Forever free" },
-  { name: "Starter", monthly: "₹499", annual: "₹4,799/yr", note: "Save 20% annually" },
-  { name: "Pro", monthly: "₹999", annual: "₹9,599/yr", note: "Most popular", highlighted: true },
-  { name: "Enterprise", monthly: "₹1,999", annual: "₹19,199/yr", note: "For large teams" },
+export const saasPlans: SaasPlan[] = [
+  { name: "Free", monthly: 0, annual: 0, note: "Forever free" },
+  { name: "Starter", monthly: 499, annual: 4799, note: "Save 20% annually" },
+  { name: "Pro", monthly: 999, annual: 9599, note: "Most popular", highlighted: true },
+  { name: "Enterprise", monthly: 1999, annual: 19199, note: "For large teams" },
 ];
 
 export const faqs = [
