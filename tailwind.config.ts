@@ -71,14 +71,27 @@ export default {
         "text-subtle": "hsl(var(--text-subtle))",
         divider: "hsl(var(--divider))",
         "divider-light": "hsl(var(--divider-light))",
+        "surface": "hsl(var(--surface))",
+        "surface-elevated": "hsl(var(--surface-elevated))",
+        "text-secondary": "hsl(var(--text-secondary))",
+        "text-muted": "hsl(var(--text-muted))",
+        "text-subtle": "hsl(var(--text-subtle))",
+        brand: {
+          DEFAULT: "hsl(var(--brand))",
+          hover: "hsl(var(--brand-hover))",
+          glow: "hsl(var(--brand-glow))",
+          foreground: "hsl(var(--brand-foreground))",
+        },
         "accent-lime": {
           DEFAULT: "hsl(var(--accent-lime))",
           foreground: "hsl(var(--accent-lime-foreground))",
         },
       },
       fontFamily: {
-        sans: ["'Satoshi'", "system-ui", "sans-serif"],
+        sans: ["'Inter Variable'", "'Inter'", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["'Berkeley Mono'", "ui-monospace", "'SF Mono'", "Menlo", "monospace"],
       },
+
       fontSize: {
         "display-xl": ["clamp(3rem, 8vw, 7rem)", { lineHeight: "0.95", letterSpacing: "-0.02em" }],
         "display-lg": ["clamp(2.5rem, 6vw, 5rem)", { lineHeight: "1", letterSpacing: "-0.02em" }],
