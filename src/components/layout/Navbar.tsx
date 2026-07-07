@@ -3,6 +3,8 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useApp } from "@/contexts/AppContext";
+import logo from "@/assets/logo.png";
+
 
 interface NavbarProps { variant?: "light" | "dark"; }
 
@@ -43,10 +45,9 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
     >
       <div className="container flex items-center justify-between py-4 lg:py-5">
         <Link to="/" className="flex items-center gap-2 font-medium tracking-tight text-foreground">
-          <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: "hsl(var(--accent-lime))" }} aria-hidden />
-          <span className="text-sm md:text-base">Synplix</span>
-          <span className="hidden sm:inline text-xs uppercase tracking-[0.15em] text-foreground/40">Infotech</span>
+          <img src={logo} alt="Synplix Infotech" className="h-8 w-auto" />
         </Link>
+
 
         <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
