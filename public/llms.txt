@@ -24,6 +24,15 @@ A six-phase delivery model: Discovery & Strategy, Design & Prototyping, Developm
 - Full SaaS platform: 10–16 weeks
 - Proposal turnaround: 48 hours
 
+## Showcase
+
+- **Synplix SaaS** (Beta): Multi-workspace management platform with billing and analytics.
+- **Applix Wear**: E-commerce apparel store for a direct-to-consumer fashion brand.
+- **CASE**: Student portfolio showcase platform — Code, Access, Share, Everywhere.
+- **The Black Sheep Bistro**: Restaurant website with menu, reservations, and reviews (Goa).
+- **RMDIOT**: Educational institution website for a polytechnic institute (5 departments, 50+ recruiters).
+- **Amora Café**: Café website with digital menu, online ordering, and table reservations (PCMC, Pune).
+
 ## Pricing
 
 ### Webpage Design (one-time)
@@ -55,8 +64,9 @@ Payment terms: 50% deposit before project commencement, balance due on completio
 ## Contact
 
 - Email: outreach@synplixinfotech.in
-- Phone/WhatsApp: +91 86689 18164
+- WhatsApp: https://wa.me/918668918164
 - LinkedIn: https://linkedin.com/company/synplix
+- Instagram: https://instagram.com/synplix.in
 - SaaS Product: https://saas.synplixinfotech.in
 
 ## Technical Details

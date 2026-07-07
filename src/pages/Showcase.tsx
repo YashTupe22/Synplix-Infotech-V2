@@ -1,49 +1,73 @@
-import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
 
-const showcaseItems = [
+const projects = [
   {
-    title: "Synplix Workspace",
+    title: "Synplix SaaS",
     category: "SaaS Platform",
-    description: "Our flagship multi-tenant SaaS product with billing, workspace management, and real-time analytics.",
+    description: "Our flagship multi-workspace management platform with billing, workspace analytics, and real-time collaboration tools. Currently in beta.",
     metrics: [
-      { label: "MRR", value: "$24.8K" },
-      { label: "Users", value: "2,847" },
-      { label: "Latency", value: "48ms" },
+      { label: "Status", value: "Beta" },
+      { label: "Type", value: "SaaS" },
+      { label: "Stack", value: "Full-stack" },
     ],
     href: "https://saas.synplixinfotech.in",
-    external: true,
+    featured: true,
   },
   {
-    title: "Custom web application",
-    category: "Web App",
-    description: "Full-stack React + Node.js product built for a growing SMB in the logistics space. Delivered in 8 weeks.",
+    title: "Applix Wear",
+    category: "E-Commerce",
+    description: "Minimalist apparel e-commerce platform with product catalog, cart, checkout, and inventory management for a direct-to-consumer fashion brand.",
     metrics: [
-      { label: "Timeline", value: "8 wks" },
-      { label: "Uptime", value: "99.9%" },
-      { label: "TTFB", value: "120ms" },
+      { label: "Type", value: "Shopify" },
+      { label: "Vertical", value: "Fashion" },
+      { label: "Platform", value: "D2C" },
     ],
+    href: "https://www.applixwear.shop/",
   },
   {
-    title: "Marketing website + CMS",
-    category: "Website",
-    description: "Content-driven marketing site with a headless CMS, custom animations, and 95+ Lighthouse scores.",
+    title: "CASE",
+    category: "Web Platform",
+    description: "Student portfolio showcase platform — Code, Access, Share, Everywhere. Enables students across all streams to build professional profiles and share them with recruiters.",
     metrics: [
-      { label: "Lighthouse", value: "98" },
-      { label: "Pages", value: "22" },
-      { label: "Load", value: "1.1s" },
+      { label: "Status", value: "Public Beta" },
+      { label: "Type", value: "Portfolio" },
+      { label: "Audience", value: "Students" },
     ],
+    href: "https://caseopensource.vercel.app/",
   },
   {
-    title: "Business automation suite",
-    category: "Automation",
-    description: "Internal workflow automation reducing manual ops work by ~60% across sales, billing, and support teams.",
+    title: "The Black Sheep Bistro",
+    category: "Restaurant Website",
+    description: "Full-featured restaurant website for a Goa-based bistro with menu management, table reservations, reviews, and seasonal content — locally sourced, globally inspired.",
     metrics: [
-      { label: "Time saved", value: "60%" },
-      { label: "Integrations", value: "9" },
-      { label: "APIs", value: "12" },
+      { label: "Location", value: "Goa" },
+      { label: "Features", value: "Menu + Booking" },
+      { label: "Since", value: "2014" },
     ],
+    href: "https://tbsb.synplixinfotech.in/",
+  },
+  {
+    title: "RMDIOT",
+    category: "Educational Institution",
+    description: "Complete institutional website for Rasiklal M. Dhariwal Institute of Technology — admissions, departments, placements, faculty, and events management.",
+    metrics: [
+      { label: "Departments", value: "5" },
+      { label: "Recruiters", value: "50+" },
+      { label: "Since", value: "1998" },
+    ],
+    href: "https://rmdiot-test.vercel.app/",
+  },
+  {
+    title: "Amora Café",
+    category: "Café & Dining",
+    description: "Immersive café website with digital menu, online ordering, table reservations, gallery, and location-based delivery for a premium Pune café experience.",
+    metrics: [
+      { label: "Rating", value: "4.9★" },
+      { label: "Reviews", value: "200+" },
+      { label: "Location", value: "PCMC, Pune" },
+    ],
+    href: "https://amora.synplixinfotech.in/",
   },
 ];
 
@@ -52,7 +76,7 @@ const Showcase = () => {
     <Layout variant="light">
       <SEO
         title="Showcase — Selected Work & Case Studies | Synplix Infotech"
-        description="A selection of SaaS platforms, web apps and automation systems we've shipped for startups and growing teams."
+        description="A selection of SaaS platforms, e-commerce stores, restaurant websites, educational portals and web apps we've shipped for clients."
         path="/showcase"
       />
       <div className="bg-background text-foreground min-h-screen">
@@ -62,23 +86,23 @@ const Showcase = () => {
             Selected work<br />across products and web.
           </h1>
           <p className="text-lg text-foreground/60 max-w-2xl">
-            A snapshot of what we've shipped — SaaS platforms, custom web apps, marketing sites, and internal automation.
+            A snapshot of what we've shipped — SaaS platforms, e-commerce stores, restaurant sites, educational portals, and internal automation.
           </p>
         </section>
 
         <section className="container pb-24 border-t border-foreground/10 pt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {showcaseItems.map((item) => {
+            {projects.map((item) => {
               const Card = (
-                <div className="group rounded-2xl border border-foreground/10 bg-foreground/[0.02] p-8 h-full flex flex-col transition-colors hover:bg-foreground/[0.04]">
+                <div className={`group rounded-2xl border border-foreground/10 bg-foreground/[0.02] p-8 h-full flex flex-col transition-colors hover:bg-foreground/[0.04] ${item.featured ? "ring-1" : ""}`}
+                  style={item.featured ? { borderColor: "hsl(var(--accent-lime))", boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
+                >
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <div>
                       <p className="text-xs uppercase tracking-[0.15em] text-foreground/40 mb-2">{item.category}</p>
                       <h3 className="text-2xl md:text-3xl font-medium tracking-tight">{item.title}</h3>
                     </div>
-                    {item.external && (
-                      <span className="text-foreground/40 group-hover:text-foreground transition-colors" aria-hidden>↗</span>
-                    )}
+                    <span className="text-foreground/30 group-hover:text-foreground transition-colors" aria-hidden>↗</span>
                   </div>
                   <p className="text-foreground/60 mb-8 flex-1">{item.description}</p>
                   <div className="grid grid-cols-3 gap-4 pt-6 border-t border-foreground/10">
@@ -91,17 +115,15 @@ const Showcase = () => {
                   </div>
                 </div>
               );
-              return item.href ? (
+              return (
                 <a
                   key={item.title}
                   href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {Card}
                 </a>
-              ) : (
-                <div key={item.title}>{Card}</div>
               );
             })}
           </div>
@@ -112,13 +134,13 @@ const Showcase = () => {
           <p className="text-foreground/60 mb-8 max-w-xl mx-auto">
             Book a free 30-minute strategy call. Written proposal in 48 hours.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href="mailto:outreach@synplixinfotech.in"
             className="inline-flex items-center gap-2 rounded-pill px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5"
             style={{ backgroundColor: "hsl(var(--accent-lime))", color: "hsl(var(--accent-lime-foreground))" }}
           >
             Start a project →
-          </Link>
+          </a>
         </section>
       </div>
     </Layout>

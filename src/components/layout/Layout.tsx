@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ export function Layout({ children, hideFooter = false, variant = "light" }: Layo
         {children}
       </main>
       {!hideFooter && <Footer />}
+      <WhatsAppButton />
     </div>
   );
 }

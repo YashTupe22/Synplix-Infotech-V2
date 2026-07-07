@@ -1,24 +1,17 @@
 const testimonials = [
   {
     quote:
-      "Synplix delivered our SaaS dashboard in under 5 weeks. The code quality and design were exactly what we needed to go live with confidence.",
-    name: "Rahul Mehta",
-    role: "Founder, TechFlow Analytics",
-    avatar: "RM",
+      "Synplix delivered initial content package for our cafe with great quality",
+    name: "Rohit Rana",
+    role: "Manager, Amora Cafe,Pune",
+    avatar: "RR",
   },
   {
     quote:
-      "They understood our business logic faster than any agency we'd worked with. The automation pipelines they built saved us 20+ hours per week.",
-    name: "Priya Sharma",
-    role: "CTO, NovaBuild Solutions",
-    avatar: "PS",
-  },
-  {
-    quote:
-      "Professional, fast, and honest about timelines. The MVP they shipped got us our first 50 customers within a month of launch.",
-    name: "Aditya Joshi",
-    role: "CEO, Acme Corp India",
-    avatar: "AJ",
+      "They understood our business logic faster than any agency we'd worked with. The Google Business Profile they made for us, ranked no 1 within 2-3 days. With their custom package they made us a custom website to handle the client via website with whatsapp intergration.",
+    name: "Netra Maral",
+    role: "CEO, Tirupati Enterprises",
+    avatar: "NM",
   },
 ];
 
@@ -62,19 +55,6 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 text-sm text-foreground/50">
-          {[
-            { label: "NDA on request" },
-            { label: "30+ projects delivered" },
-            { label: "48hr response time" },
-            { label: "Ship in 4–6 weeks" },
-          ].map((badge) => (
-            <span key={badge.label} className="flex items-center gap-2">
-              <span className="font-bold" style={{ color: "hsl(var(--accent-lime))" }}>✓</span>
-              {badge.label}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
