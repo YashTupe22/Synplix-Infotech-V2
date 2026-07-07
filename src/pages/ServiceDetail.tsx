@@ -26,7 +26,7 @@ const ServiceDetail = () => {
     <Layout variant="light">
       <SEO
         title={`${service.title} — Services | Synplix Infotech`}
-        description={service.description ?? service.tagline ?? `${service.title} services by Synplix Infotech.`}
+        description={service.tagline}
         path={`/services/${service.slug}`}
       />
       <div className="bg-background text-foreground min-h-screen">
