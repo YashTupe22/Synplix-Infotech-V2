@@ -8,7 +8,7 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
     <div
       className={cn(
         "relative rounded-2xl border p-8 flex flex-col",
-        plan.highlighted ? "border-transparent bg-white text-black" : "border-black/10 bg-black/[0.02] text-black",
+        plan.highlighted ? "border-transparent bg-black text-white" : "border-black/10 bg-black/[0.02] text-black",
       )}
       style={plan.highlighted ? { boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
     >
@@ -34,7 +34,7 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
         to="/contact"
         className={cn(
           "inline-flex items-center justify-center gap-2 rounded-pill py-3 text-sm font-medium transition-colors",
-          plan.highlighted ? "bg-white text-black hover:bg-black/85" : "border border-black/20 hover:bg-black/5",
+          plan.highlighted ? "bg-black text-white hover:bg-black/85" : "border border-black/20 hover:bg-black/5",
         )}
       >
         Get started →

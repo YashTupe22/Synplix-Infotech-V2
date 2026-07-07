@@ -33,8 +33,8 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? isDark
-            ? "bg-black/80 backdrop-blur-md border-b border-black/5"
-            : "bg-black/80 backdrop-blur-md border-b border-black/5"
+            ? "bg-neutral-950/85 backdrop-blur-md border-b border-white/10"
+            : "bg-white/80 backdrop-blur-md border-b border-black/5"
           : "bg-transparent",
       )}
     >
