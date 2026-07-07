@@ -10,22 +10,11 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-background text-foreground pt-32 pb-16 lg:pt-40 lg:pb-24">
-      {/* Ambient grid */}
+    <section className="relative min-h-[88vh] flex items-end overflow-hidden bg-background text-foreground pt-32 pb-16 lg:pt-40 lg:pb-24">
+      {/* Soft ambient glow */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--accent-lime)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent-lime)) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-          transform: `translateY(${scrollY * 0.15}px)`,
-        }}
-      />
-      {/* Glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-3xl opacity-30"
+        className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
         style={{ background: "radial-gradient(circle, hsl(var(--accent-lime)) 0%, transparent 60%)" }}
       />
 
@@ -36,12 +25,10 @@ export function HeroSection() {
         </div>
 
         <h1
-          className="text-[3rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[8.5rem] font-medium leading-[0.92] tracking-[-0.03em] max-w-6xl"
-          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] font-medium leading-[0.95] tracking-[-0.03em] max-w-5xl"
+          style={{ transform: `translateY(${scrollY * 0.08}px)` }}
         >
-          We build the web apps,
-          <br />
-          SaaS platforms and{" "}
+          We build the web apps, SaaS platforms and{" "}
           <span
             className="italic font-normal"
             style={{ color: "hsl(var(--accent-lime))" }}
