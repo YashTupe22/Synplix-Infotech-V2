@@ -42,13 +42,18 @@
     --radius: 0rem;
 
     /* Custom tokens */
-    --surface-dark: 0 0% 8%;
+    --surface-dark: 0 0% 6%;
     --surface-dark-foreground: 0 0% 100%;
-    --surface-elevated: 0 0% 12%;
+    --surface-elevated: 0 0% 10%;
     --text-muted: 0 0% 60%;
     --text-subtle: 0 0% 70%;
-    --divider: 0 0% 20%;
+    --divider: 0 0% 18%;
     --divider-light: 0 0% 88%;
+
+    /* Synplix signature accent — electric lime */
+    --accent-lime: 72 100% 58%;
+    --accent-lime-foreground: 0 0% 6%;
+
 
     /* Sidebar defaults */
     --sidebar-background: 0 0% 98%;
