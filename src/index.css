@@ -73,32 +73,57 @@
   }
 
   .dark {
-    /* Kept minimal for shadcn compatibility — the app runs in light mode. */
-    --background: 220 11% 4%;
-    --foreground: 210 15% 97%;
-    --card: 220 11% 6%;
-    --card-foreground: 210 15% 97%;
-    --popover: 220 11% 6%;
-    --popover-foreground: 210 15% 97%;
-    --primary: 232 55% 60%;
+    /* Linear dark palette — DESIGN.md */
+    --background: 220 6% 4%;           /* #08090a marketing black */
+    --foreground: 210 11% 97%;         /* #f7f8f8 warm near-white */
+
+    --card: 220 5% 6%;                 /* #0f1011 panel */
+    --card-foreground: 210 11% 97%;
+
+    --popover: 220 5% 6%;
+    --popover-foreground: 210 11% 97%;
+
+    --primary: 232 55% 60%;            /* #5e6ad2 brand */
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 5% 12%;
-    --secondary-foreground: 210 15% 97%;
-    --muted: 220 5% 12%;
-    --muted-foreground: 218 7% 55%;
-    --accent: 220 5% 12%;
-    --accent-foreground: 210 15% 97%;
-    --destructive: 0 62% 40%;
-    --destructive-foreground: 210 15% 97%;
-    --border: 220 5% 15%;
+
+    --secondary: 220 5% 9%;            /* #16181a slight elevation */
+    --secondary-foreground: 210 11% 97%;
+
+    --muted: 220 5% 9%;
+    --muted-foreground: 218 8% 60%;    /* #8a8f98 */
+
+    --accent: 220 5% 15%;              /* #23252a */
+    --accent-foreground: 210 11% 97%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 210 11% 97%;
+
+    --border: 220 5% 15%;              /* #23252a */
     --input: 220 5% 15%;
     --ring: 232 55% 60%;
-    --sidebar-background: 220 11% 6%;
-    --sidebar-foreground: 210 15% 97%;
+
+    --surface: 220 5% 6%;
+    --surface-elevated: 220 5% 10%;    /* #191a1b */
+    --text-secondary: 218 8% 78%;
+    --text-muted: 218 8% 60%;          /* #8a8f98 */
+    --text-subtle: 218 8% 45%;
+    --divider: 220 5% 15%;
+    --divider-light: 220 5% 12%;
+
+    --brand: 232 55% 60%;
+    --brand-hover: 235 100% 72%;       /* #7170ff */
+    --brand-glow: 234 100% 76%;
+    --brand-foreground: 0 0% 100%;
+
+    --accent-lime: 232 55% 60%;
+    --accent-lime-foreground: 0 0% 100%;
+
+    --sidebar-background: 220 6% 4%;
+    --sidebar-foreground: 210 11% 97%;
     --sidebar-primary: 232 55% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 5% 12%;
-    --sidebar-accent-foreground: 210 15% 97%;
+    --sidebar-accent: 220 5% 9%;
+    --sidebar-accent-foreground: 210 11% 97%;
     --sidebar-border: 220 5% 15%;
     --sidebar-ring: 232 55% 60%;
   }
