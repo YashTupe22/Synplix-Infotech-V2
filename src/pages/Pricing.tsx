@@ -8,7 +8,7 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
     <div
       className={cn(
         "relative rounded-2xl border p-8 flex flex-col",
-        plan.highlighted ? "border-transparent bg-white text-black" : "border-white/10 bg-white/[0.02] text-white",
+        plan.highlighted ? "border-transparent bg-white text-black" : "border-black/10 bg-black/[0.02] text-black",
       )}
       style={plan.highlighted ? { boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
     >
@@ -23,9 +23,9 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
       <h3 className="text-lg font-medium mb-2">{plan.name}</h3>
       <div className="mb-6 flex items-baseline gap-2">
         <span className="text-4xl font-medium tracking-tight">{plan.price}</span>
-        <span className={cn("text-sm", plan.highlighted ? "text-black/60" : "text-white/50")}>{plan.cadence}</span>
+        <span className={cn("text-sm", plan.highlighted ? "text-black/60" : "text-black/50")}>{plan.cadence}</span>
       </div>
-      <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-black/70" : "text-white/70")}>
+      <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-black/70" : "text-black/70")}>
         {plan.features.map((f) => (
           <li key={f} className="text-sm flex gap-2"><span aria-hidden>›</span>{f}</li>
         ))}
@@ -34,7 +34,7 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
         to="/contact"
         className={cn(
           "inline-flex items-center justify-center gap-2 rounded-pill py-3 text-sm font-medium transition-colors",
-          plan.highlighted ? "bg-black text-white hover:bg-black/85" : "border border-white/20 hover:bg-white/5",
+          plan.highlighted ? "bg-white text-black hover:bg-black/85" : "border border-black/20 hover:bg-black/5",
         )}
       >
         Get started →
@@ -45,48 +45,48 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
 
 const Pricing = () => {
   return (
-    <Layout variant="dark">
-      <div className="bg-black text-white min-h-screen">
+    <Layout variant="light">
+      <div className="bg-white text-black min-h-screen">
         <section className="container pt-40 pb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">Pricing</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">Pricing</p>
           <h1 className="text-5xl md:text-7xl font-medium leading-[0.95] tracking-[-0.03em] max-w-4xl mb-6">
             Simple plans.<br />Custom quotes when it matters.
           </h1>
-          <p className="text-lg text-white/60 max-w-2xl">
+          <p className="text-lg text-black/60 max-w-2xl">
             Prices are in INR. Every engagement starts with a free 30-minute strategy call and a written proposal within 48 hours.
           </p>
         </section>
 
         {/* Webpage plans */}
-        <section className="container py-16 border-t border-white/10">
+        <section className="container py-16 border-t border-black/10">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Webpage design</h2>
-          <p className="text-white/50 mb-10">One-time projects for marketing and product websites.</p>
+          <p className="text-black/50 mb-10">One-time projects for marketing and product websites.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {webpagePlans.map((p) => (<PlanCard key={p.name} plan={p} />))}
           </div>
         </section>
 
         {/* Content plans */}
-        <section className="container py-16 border-t border-white/10">
+        <section className="container py-16 border-t border-black/10">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Content creation</h2>
-          <p className="text-white/50 mb-10">Monthly plans for social, blog, newsletter and ad copy.</p>
+          <p className="text-black/50 mb-10">Monthly plans for social, blog, newsletter and ad copy.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contentPlans.map((p) => (<PlanCard key={p.name} plan={p} />))}
           </div>
         </section>
 
         {/* SaaS plans */}
-        <section className="container py-16 border-t border-white/10">
+        <section className="container py-16 border-t border-black/10">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
               <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Synplix SaaS subscription</h2>
-              <p className="text-white/50">Our multi-workspace SaaS product for teams.</p>
+              <p className="text-black/50">Our multi-workspace SaaS product for teams.</p>
             </div>
             <a
               href="https://saas.synplixinfotech.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-white/60 hover:text-white transition-colors"
+              className="text-sm text-black/60 hover:text-black transition-colors"
             >
               Try the product ↗
             </a>
@@ -98,7 +98,7 @@ const Pricing = () => {
                 key={p.name}
                 className={cn(
                   "rounded-2xl border p-6 flex flex-col",
-                  p.highlighted ? "border-transparent bg-white/[0.06]" : "border-white/10 bg-white/[0.02]",
+                  p.highlighted ? "border-transparent bg-black/[0.06]" : "border-black/10 bg-black/[0.02]",
                 )}
                 style={p.highlighted ? { boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
               >
@@ -111,22 +111,22 @@ const Pricing = () => {
                   </span>
                 )}
                 <h3 className="text-base font-medium mb-1">{p.name}</h3>
-                <p className="text-3xl font-medium tracking-tight mb-1">{p.monthly}<span className="text-sm text-white/40 font-normal">/mo</span></p>
-                <p className="text-xs text-white/40 mb-4">or {p.annual}</p>
-                <p className="text-sm text-white/60 mt-auto">{p.note}</p>
+                <p className="text-3xl font-medium tracking-tight mb-1">{p.monthly}<span className="text-sm text-black/40 font-normal">/mo</span></p>
+                <p className="text-xs text-black/40 mb-4">or {p.annual}</p>
+                <p className="text-sm text-black/60 mt-auto">{p.note}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Payment terms */}
-        <section className="container py-16 border-t border-white/10">
+        <section className="container py-16 border-t border-black/10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-3">Payment terms</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-3">Payment terms</p>
               <h2 className="text-2xl md:text-3xl font-medium tracking-tight">Predictable, milestone-based.</h2>
             </div>
-            <ul className="lg:col-span-8 space-y-3 text-white/70">
+            <ul className="lg:col-span-8 space-y-3 text-black/70">
               <li>· 50% deposit before project commencement</li>
               <li>· Balance due on completion or per milestones</li>
               <li>· Invoices payable within 7 business days</li>

@@ -6,8 +6,8 @@ import { PricingPreview } from "@/components/PricingPreview";
 
 const Index = () => {
   return (
-    <Layout variant="dark">
-      <div className="bg-black min-h-screen">
+    <Layout variant="light">
+      <div className="bg-white min-h-screen">
         <HeroSection />
         <ServicesSection />
         <ProcessPreview />

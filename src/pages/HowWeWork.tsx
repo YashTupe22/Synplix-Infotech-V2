@@ -4,39 +4,39 @@ import { process, timelines } from "@/data/services";
 
 const HowWeWork = () => {
   return (
-    <Layout variant="dark">
-      <div className="bg-black text-white min-h-screen">
+    <Layout variant="light">
+      <div className="bg-white text-black min-h-screen">
         <section className="container pt-40 pb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">How we work</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">How we work</p>
           <h1 className="text-5xl md:text-7xl font-medium leading-[0.95] tracking-[-0.03em] max-w-4xl mb-6">
             A delivery model built<br />for real projects.
           </h1>
-          <p className="text-lg text-white/60 max-w-2xl">
+          <p className="text-lg text-black/60 max-w-2xl">
             Short cycles, working previews from week one, and a support layer that follows the product into growth. Strategy, design, build, and scale — in that order.
           </p>
         </section>
 
-        <section className="container py-16 border-t border-white/10">
+        <section className="container py-16 border-t border-black/10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {timelines.map((t) => (
-              <div key={t.label} className="rounded-2xl border border-white/10 p-6">
-                <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-2">{t.label}</p>
+              <div key={t.label} className="rounded-2xl border border-black/10 p-6">
+                <p className="text-xs uppercase tracking-[0.15em] text-black/40 mb-2">{t.label}</p>
                 <p className="text-2xl font-medium tracking-tight" style={{ color: "hsl(var(--accent-lime))" }}>{t.value}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="container py-16 border-t border-white/10">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-8">Six phases</p>
-          <ol className="space-y-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+        <section className="container py-16 border-t border-black/10">
+          <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-8">Six phases</p>
+          <ol className="space-y-px bg-black/10 border border-black/10 rounded-2xl overflow-hidden">
             {process.map((p) => (
-              <li key={p.n} className="bg-black p-8 md:p-10 grid grid-cols-12 gap-6 items-start">
-                <div className="col-span-12 md:col-span-2 font-mono text-sm text-white/40">{p.n}</div>
+              <li key={p.n} className="bg-white p-8 md:p-10 grid grid-cols-12 gap-6 items-start">
+                <div className="col-span-12 md:col-span-2 font-mono text-sm text-black/40">{p.n}</div>
                 <div className="col-span-12 md:col-span-4">
                   <h3 className="text-xl md:text-2xl font-medium tracking-tight">{p.title}</h3>
                 </div>
-                <div className="col-span-12 md:col-span-6 text-white/70 leading-relaxed">{p.body}</div>
+                <div className="col-span-12 md:col-span-6 text-black/70 leading-relaxed">{p.body}</div>
               </li>
             ))}
           </ol>
@@ -49,7 +49,7 @@ const HowWeWork = () => {
           >
             <div>
               <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Ready to talk specifics?</h3>
-              <p className="text-white/60">Book a free 30-minute strategy call — we&apos;ll respond within one business day.</p>
+              <p className="text-black/60">Book a free 30-minute strategy call — we&apos;ll respond within one business day.</p>
             </div>
             <Link
               to="/contact"
