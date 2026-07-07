@@ -4,16 +4,16 @@ import { cn } from "@/lib/utils";
 
 export function PricingPreview() {
   return (
-    <section className="bg-black text-white py-24 md:py-32 border-t border-white/5">
+    <section className="bg-white text-black py-24 md:py-32 border-t border-black/5">
       <div className="container">
         <div className="flex items-end justify-between mb-16 gap-8 flex-wrap">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-4">Pricing</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-4">Pricing</p>
             <h2 className="text-4xl md:text-6xl font-medium leading-[0.95] tracking-[-0.02em] max-w-3xl">
               Transparent pricing.<br />No surprises.
             </h2>
           </div>
-          <Link to="/pricing" className="text-sm text-white/60 hover:text-white transition-colors">
+          <Link to="/pricing" className="text-sm text-black/60 hover:text-black transition-colors">
             Content & SaaS plans →
           </Link>
         </div>
@@ -24,7 +24,7 @@ export function PricingPreview() {
               key={plan.name}
               className={cn(
                 "relative rounded-2xl border p-8 flex flex-col",
-                plan.highlighted ? "border-transparent bg-white text-black" : "border-white/10 bg-white/[0.02]",
+                plan.highlighted ? "border-transparent bg-black text-white" : "border-black/10 bg-black/[0.02]",
               )}
               style={plan.highlighted ? { boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
             >
@@ -36,12 +36,12 @@ export function PricingPreview() {
                   Most popular
                 </span>
               )}
-              <h3 className={cn("text-lg font-medium mb-2", plan.highlighted ? "text-black" : "text-white")}>{plan.name}</h3>
+              <h3 className={cn("text-lg font-medium mb-2", plan.highlighted ? "text-white" : "text-black")}>{plan.name}</h3>
               <div className="mb-6 flex items-baseline gap-2">
-                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-black" : "text-white")}>{plan.price}</span>
-                <span className={cn("text-sm", plan.highlighted ? "text-black/60" : "text-white/50")}>{plan.cadence}</span>
+                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-white" : "text-black")}>{plan.price}</span>
+                <span className={cn("text-sm", plan.highlighted ? "text-white/70" : "text-black/50")}>{plan.cadence}</span>
               </div>
-              <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-black/70" : "text-white/70")}>
+              <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-white/80" : "text-black/70")}>
                 {plan.features.map((f) => (
                   <li key={f} className="text-sm flex gap-2">
                     <span aria-hidden>›</span>
@@ -55,7 +55,7 @@ export function PricingPreview() {
                   "inline-flex items-center justify-center gap-2 rounded-pill py-3 text-sm font-medium transition-colors",
                   plan.highlighted
                     ? "bg-black text-white hover:bg-black/85"
-                    : "border border-white/20 hover:bg-white/5",
+                    : "border border-black/20 hover:bg-black/5",
                 )}
               >
                 Get started →

@@ -33,16 +33,16 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? isDark
-            ? "bg-black/80 backdrop-blur-md border-b border-white/5"
+            ? "bg-neutral-950/85 backdrop-blur-md border-b border-white/10"
             : "bg-white/80 backdrop-blur-md border-b border-black/5"
           : "bg-transparent",
       )}
     >
       <div className="container flex items-center justify-between py-4 lg:py-5">
-        <Link to="/" className={cn("flex items-center gap-2 font-medium tracking-tight", isDark ? "text-white" : "text-black")}>
+        <Link to="/" className={cn("flex items-center gap-2 font-medium tracking-tight", isDark ? "text-black" : "text-black")}>
           <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: "hsl(var(--accent-lime))" }} aria-hidden />
           <span className="text-sm md:text-base">Synplix</span>
-          <span className={cn("hidden sm:inline text-xs uppercase tracking-[0.15em]", isDark ? "text-white/40" : "text-black/40")}>Infotech</span>
+          <span className={cn("hidden sm:inline text-xs uppercase tracking-[0.15em]", isDark ? "text-black/40" : "text-black/40")}>Infotech</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -54,7 +54,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
                 cn(
                   "text-sm transition-colors",
                   isDark
-                    ? isActive ? "text-white" : "text-white/60 hover:text-white"
+                    ? isActive ? "text-black" : "text-black/60 hover:text-black"
                     : isActive ? "text-black" : "text-black/60 hover:text-black",
                 )
               }
@@ -75,7 +75,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className={cn("lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md", isDark ? "text-white" : "text-black")}
+            className={cn("lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md", isDark ? "text-black" : "text-black")}
             aria-label="Toggle menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -84,7 +84,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
       </div>
 
       {open && (
-        <div className={cn("lg:hidden border-t", isDark ? "bg-black border-white/10" : "bg-white border-black/10")}>
+        <div className={cn("lg:hidden border-t", isDark ? "bg-white border-black/10" : "bg-white border-black/10")}>
           <div className="container py-6 flex flex-col gap-4">
             {navItems.map((item) => (
               <NavLink
@@ -93,7 +93,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
                 className={({ isActive }) =>
                   cn(
                     "text-base py-2",
-                    isDark ? (isActive ? "text-white" : "text-white/70") : (isActive ? "text-black" : "text-black/70"),
+                    isDark ? (isActive ? "text-black" : "text-black/70") : (isActive ? "text-black" : "text-black/70"),
                   )
                 }
               >

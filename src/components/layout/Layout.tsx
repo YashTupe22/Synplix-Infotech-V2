@@ -10,7 +10,7 @@ interface LayoutProps {
 
 export function Layout({ children, hideFooter = false, variant = "light" }: LayoutProps) {
   return (
-    <div className={`min-h-screen flex flex-col ${variant === "dark" ? "bg-black" : "bg-white"}`}>
+    <div className={`min-h-screen flex flex-col ${variant === "dark" ? "bg-white" : "bg-white"}`}>
       <Navbar variant={variant} />
       <main className="flex-1">
         {children}
