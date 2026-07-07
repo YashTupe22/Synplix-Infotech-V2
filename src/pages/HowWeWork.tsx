@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { process, timelines } from "@/data/services";
 
 const HowWeWork = () => {
   return (
     <Layout variant="light">
+      <SEO
+        title="How We Work — Our Delivery Process | Synplix Infotech"
+        description="Short cycles, working previews from week one, and a support layer that follows the product into growth. Strategy, design, build, scale."
+        path="/how-we-work"
+      />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">How we work</p>

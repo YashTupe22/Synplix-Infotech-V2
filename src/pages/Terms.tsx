@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 
 const sections = [
   {
@@ -29,6 +30,11 @@ const sections = [
 
 const Terms = () => (
   <Layout variant="light">
+    <SEO
+      title="Terms of Service | Synplix Infotech"
+      description="Engagement, payment, IP and warranty terms for projects delivered by Synplix Infotech Services."
+      path="/terms"
+    />
     <div className="bg-background text-foreground min-h-screen">
       <section className="container pt-40 pb-16">
         <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Legal</p>

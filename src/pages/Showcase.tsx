@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 
 const showcaseItems = [
   {
@@ -49,6 +50,11 @@ const showcaseItems = [
 const Showcase = () => {
   return (
     <Layout variant="light">
+      <SEO
+        title="Showcase — Selected Work & Case Studies | Synplix Infotech"
+        description="A selection of SaaS platforms, web apps and automation systems we've shipped for startups and growing teams."
+        path="/showcase"
+      />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Showcase</p>

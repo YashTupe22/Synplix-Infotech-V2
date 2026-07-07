@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { services } from "@/data/services";
 
 const ServiceDetail = () => {
@@ -23,6 +24,11 @@ const ServiceDetail = () => {
 
   return (
     <Layout variant="light">
+      <SEO
+        title={`${service.title} — Services | Synplix Infotech`}
+        description={service.tagline}
+        path={`/services/${service.slug}`}
+      />
       <div className="bg-background text-foreground min-h-screen">
         {/* Hero */}
         <section className="relative container pt-40 pb-20 overflow-hidden">

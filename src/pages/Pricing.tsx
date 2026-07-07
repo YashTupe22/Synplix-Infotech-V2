@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { webpagePlans, contentPlans, saasPlans } from "@/data/pricing";
 import { cn } from "@/lib/utils";
 import { useApp } from "@/contexts/AppContext";
@@ -49,6 +50,11 @@ const Pricing = () => {
   const { formatPrice, currency } = useApp();
   return (
     <Layout variant="light">
+      <SEO
+        title="Pricing — Transparent Plans for Web, Content & SaaS | Synplix"
+        description="Clear, fixed-scope pricing for websites, content systems and SaaS builds. INR and USD, no hidden fees."
+        path="/pricing"
+      />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Pricing</p>

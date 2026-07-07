@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 
 const sections = [
   {
@@ -29,6 +30,11 @@ const sections = [
 
 const Privacy = () => (
   <Layout variant="light">
+    <SEO
+      title="Privacy Policy | Synplix Infotech"
+      description="How Synplix Infotech Services collects, uses and protects your information."
+      path="/privacy"
+    />
     <div className="bg-background text-foreground min-h-screen">
       <section className="container pt-40 pb-16">
         <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Legal</p>
