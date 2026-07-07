@@ -29,17 +29,17 @@ const sections = [
 
 const Privacy = () => (
   <Layout variant="light">
-    <div className="bg-white text-black min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       <section className="container pt-40 pb-16">
-        <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">Legal</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Legal</p>
         <h1 className="text-5xl md:text-6xl font-medium leading-[0.95] tracking-[-0.03em] mb-6">Privacy policy</h1>
-        <p className="text-black/60 max-w-2xl">This policy describes how Synplix Infotech Services collects, uses and protects information about visitors and clients.</p>
+        <p className="text-foreground/60 max-w-2xl">This policy describes how Synplix Infotech Services collects, uses and protects information about visitors and clients.</p>
       </section>
       <section className="container pb-32 max-w-3xl space-y-10">
         {sections.map((s) => (
-          <div key={s.title} className="border-t border-black/10 pt-8">
+          <div key={s.title} className="border-t border-foreground/10 pt-8">
             <h2 className="text-xl md:text-2xl font-medium tracking-tight mb-3">{s.title}</h2>
-            <p className="text-black/70 leading-relaxed">{s.body}</p>
+            <p className="text-foreground/70 leading-relaxed">{s.body}</p>
           </div>
         ))}
       </section>

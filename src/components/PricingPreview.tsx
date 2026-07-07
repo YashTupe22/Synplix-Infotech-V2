@@ -6,16 +6,16 @@ import { useApp } from "@/contexts/AppContext";
 export function PricingPreview() {
   const { formatPrice } = useApp();
   return (
-    <section className="bg-white text-black py-24 md:py-32 border-t border-black/5">
+    <section className="bg-background text-foreground py-24 md:py-32 border-t border-foreground/5">
       <div className="container">
         <div className="flex items-end justify-between mb-16 gap-8 flex-wrap">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-4">Pricing</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-4">Pricing</p>
             <h2 className="text-4xl md:text-6xl font-medium leading-[0.95] tracking-[-0.02em] max-w-3xl">
               Transparent pricing.<br />No surprises.
             </h2>
           </div>
-          <Link to="/pricing" className="text-sm text-black/60 hover:text-black transition-colors">
+          <Link to="/pricing" className="text-sm text-foreground/60 hover:text-foreground transition-colors">
             Content & SaaS plans →
           </Link>
         </div>
@@ -26,7 +26,7 @@ export function PricingPreview() {
               key={plan.name}
               className={cn(
                 "relative rounded-2xl border p-8 flex flex-col",
-                plan.highlighted ? "border-transparent bg-black text-white" : "border-black/10 bg-black/[0.02]",
+                plan.highlighted ? "border-transparent bg-primary text-primary-foreground" : "border-foreground/10 bg-foreground/[0.02]",
               )}
               style={plan.highlighted ? { boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
             >
@@ -38,12 +38,12 @@ export function PricingPreview() {
                   Most popular
                 </span>
               )}
-              <h3 className={cn("text-lg font-medium mb-2", plan.highlighted ? "text-white" : "text-black")}>{plan.name}</h3>
+              <h3 className={cn("text-lg font-medium mb-2", plan.highlighted ? "text-primary-foreground" : "text-foreground")}>{plan.name}</h3>
               <div className="mb-6 flex items-baseline gap-2">
-                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-white" : "text-black")}>{plan.price === "custom" ? "Custom" : formatPrice(plan.price)}</span>
-                <span className={cn("text-sm", plan.highlighted ? "text-white/70" : "text-black/50")}>{plan.cadence}</span>
+                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-primary-foreground" : "text-foreground")}>{plan.price === "custom" ? "Custom" : formatPrice(plan.price)}</span>
+                <span className={cn("text-sm", plan.highlighted ? "text-primary-foreground/70" : "text-foreground/50")}>{plan.cadence}</span>
               </div>
-              <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-white/80" : "text-black/70")}>
+              <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-primary-foreground/80" : "text-foreground/70")}>
                 {plan.features.map((f) => (
                   <li key={f} className="text-sm flex gap-2">
                     <span aria-hidden>›</span>
@@ -56,8 +56,8 @@ export function PricingPreview() {
                 className={cn(
                   "inline-flex items-center justify-center gap-2 rounded-pill py-3 text-sm font-medium transition-colors",
                   plan.highlighted
-                    ? "bg-black text-white hover:bg-black/85"
-                    : "border border-black/20 hover:bg-black/5",
+                    ? "bg-primary text-primary-foreground hover:bg-foreground/85"
+                    : "border border-foreground/20 hover:bg-foreground/5",
                 )}
               >
                 Get started →

@@ -10,7 +10,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-white text-black pt-32 pb-16 lg:pt-40 lg:pb-24">
+    <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-background text-foreground pt-32 pb-16 lg:pt-40 lg:pb-24">
       {/* Ambient grid */}
       <div
         aria-hidden
@@ -30,7 +30,7 @@ export function HeroSection() {
       />
 
       <div className="container relative">
-        <div className="flex items-center gap-3 mb-8 text-xs uppercase tracking-[0.2em] text-black/50">
+        <div className="flex items-center gap-3 mb-8 text-xs uppercase tracking-[0.2em] text-foreground/50">
           <span className="inline-block h-1.5 w-1.5 rounded-full animate-pulse" style={{ backgroundColor: "hsl(var(--accent-lime))" }} />
           Pune, India · Available for new projects
         </div>
@@ -52,7 +52,7 @@ export function HeroSection() {
         </h1>
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          <p className="lg:col-span-6 text-base md:text-lg text-black/60 leading-relaxed max-w-xl">
+          <p className="lg:col-span-6 text-base md:text-lg text-foreground/60 leading-relaxed max-w-xl">
             Synplix Infotech Services is a web development and product engineering partner for startups, SMBs and SaaS teams. Custom builds, predictable delivery, long-term scalability.
           </p>
           <div className="lg:col-span-6 flex flex-wrap items-center gap-4 lg:justify-end">
@@ -65,7 +65,7 @@ export function HeroSection() {
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 rounded-pill border border-black/20 px-6 py-3 text-sm text-black hover:bg-black/5 transition-colors"
+              className="inline-flex items-center gap-2 rounded-pill border border-foreground/20 px-6 py-3 text-sm text-foreground hover:bg-foreground/5 transition-colors"
             >
               Explore services
             </Link>

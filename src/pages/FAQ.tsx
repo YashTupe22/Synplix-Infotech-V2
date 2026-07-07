@@ -8,27 +8,27 @@ const FAQ = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <Layout variant="light">
-      <div className="bg-white text-black min-h-screen">
+      <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">FAQ</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">FAQ</p>
           <h1 className="text-5xl md:text-7xl font-medium leading-[0.95] tracking-[-0.03em] max-w-4xl mb-6">
             Answers before<br />the first call.
           </h1>
         </section>
 
         <section className="container pb-16">
-          <div className="border-t border-black/10">
+          <div className="border-t border-foreground/10">
             {faqs.map((f, i) => {
               const active = open === i;
               return (
-                <div key={f.q} className="border-b border-black/10">
+                <div key={f.q} className="border-b border-foreground/10">
                   <button
                     type="button"
                     onClick={() => setOpen(active ? null : i)}
                     className="w-full flex items-center justify-between gap-6 py-6 md:py-8 text-left group"
                     aria-expanded={active}
                   >
-                    <span className="text-lg md:text-2xl font-medium tracking-tight group-hover:text-black/80 transition-colors">
+                    <span className="text-lg md:text-2xl font-medium tracking-tight group-hover:text-foreground/80 transition-colors">
                       {f.q}
                     </span>
                     <span
@@ -46,7 +46,7 @@ const FAQ = () => {
                     )}
                   >
                     <div className="overflow-hidden">
-                      <p className="text-black/70 leading-relaxed max-w-3xl">{f.a}</p>
+                      <p className="text-foreground/70 leading-relaxed max-w-3xl">{f.a}</p>
                     </div>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const FAQ = () => {
           >
             <div>
               <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Still have questions?</h3>
-              <p className="text-black/60">Email us — we usually reply the same working day.</p>
+              <p className="text-foreground/60">Email us — we usually reply the same working day.</p>
             </div>
             <Link
               to="/contact"
