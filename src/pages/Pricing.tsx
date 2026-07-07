@@ -23,9 +23,9 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
       <h3 className="text-lg font-medium mb-2">{plan.name}</h3>
       <div className="mb-6 flex items-baseline gap-2">
         <span className="text-4xl font-medium tracking-tight">{plan.price}</span>
-        <span className={cn("text-sm", plan.highlighted ? "text-black/60" : "text-black/50")}>{plan.cadence}</span>
+        <span className={cn("text-sm", plan.highlighted ? "text-white/70" : "text-black/50")}>{plan.cadence}</span>
       </div>
-      <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-black/70" : "text-black/70")}>
+      <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-white/80" : "text-black/70")}>
         {plan.features.map((f) => (
           <li key={f} className="text-sm flex gap-2"><span aria-hidden>›</span>{f}</li>
         ))}
