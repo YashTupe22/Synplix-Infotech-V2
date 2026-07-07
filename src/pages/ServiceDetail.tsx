@@ -24,6 +24,11 @@ const ServiceDetail = () => {
 
   return (
     <Layout variant="light">
+      <SEO
+        title={`${service.title} — Services | Synplix Infotech`}
+        description={service.description ?? service.tagline ?? `${service.title} services by Synplix Infotech.`}
+        path={`/services/${service.slug}`}
+      />
       <div className="bg-background text-foreground min-h-screen">
         {/* Hero */}
         <section className="relative container pt-40 pb-20 overflow-hidden">
