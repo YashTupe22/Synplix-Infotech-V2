@@ -2,8 +2,10 @@ import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { WhyChooseSection } from "@/components/WhyChooseSection";
 import { ProcessPreview } from "@/components/ProcessPreview";
 import { PricingPreview } from "@/components/PricingPreview";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 const Index = () => {
   return (
@@ -23,7 +25,9 @@ const Index = () => {
       <div className="bg-background min-h-screen">
         <HeroSection />
         <ServicesSection />
+        <WhyChooseSection />
         <ProcessPreview />
+        <TestimonialsSection />
         <PricingPreview />
       </div>
     </Layout>
