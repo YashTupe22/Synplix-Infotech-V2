@@ -2,115 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  DESIGN SYSTEM — Editorial Portfolio
-  Inspired by Marco Coppeto / Wolff Olins
-  All colors are HSL.
+/*
+  DESIGN SYSTEM — Synplix (Linear-inspired, light)
+  Palette: near-black text on off-white canvas, indigo brand accent, cool thin borders.
+  All colors are HSL (h s% l%).
 */
 
 @layer base {
   :root {
-    /* Core palette - Light mode */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    /* Canvas & surfaces */
+    --background: 210 8% 97%;         /* #f7f8f8 */
+    --foreground: 220 11% 6%;          /* near #0a0b0d */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card-foreground: 220 11% 6%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 220 11% 6%;
 
-    --primary: 0 0% 8%;
+    /* Brand indigo-violet — single chromatic accent */
+    --primary: 232 55% 60%;            /* #5e6ad2 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 216 12% 96%;          /* #f3f4f5 */
+    --secondary-foreground: 220 11% 6%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 216 12% 96%;
+    --muted-foreground: 218 7% 40%;    /* ~#5e626b */
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 216 12% 96%;
+    --accent-foreground: 220 11% 6%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 8%;
+    --border: 214 15% 88%;             /* ~#d9dde3 */
+    --input: 214 15% 88%;
+    --ring: 232 55% 60%;
 
-    --radius: 0rem;
+    --radius: 0.375rem;                /* 6px — Linear button radius */
 
-    /* Custom tokens */
-    --surface-dark: 0 0% 6%;
-    --surface-dark-foreground: 0 0% 100%;
-    --surface-elevated: 0 0% 10%;
-    --text-muted: 0 0% 60%;
-    --text-subtle: 0 0% 70%;
-    --divider: 0 0% 18%;
-    --divider-light: 0 0% 88%;
+    /* Custom surfaces & type */
+    --surface: 216 12% 96%;            /* #f3f4f5 */
+    --surface-elevated: 210 10% 94%;   /* #eff0f2 */
+    --text-secondary: 218 12% 24%;     /* body */
+    --text-muted: 218 7% 40%;          /* metadata */
+    --text-subtle: 218 8% 55%;         /* de-emphasized */
+    --divider: 214 15% 88%;
+    --divider-light: 214 15% 92%;
 
-    /* Synplix signature accent — electric lime */
-    --accent-lime: 72 100% 58%;
-    --accent-lime-foreground: 0 0% 6%;
+    /* Brand tokens — the ONLY chromatic accent */
+    --brand: 232 55% 60%;              /* #5e6ad2 primary */
+    --brand-hover: 235 100% 72%;       /* #7170ff interactive */
+    --brand-glow: 234 100% 76%;        /* #828fff hover */
+    --brand-foreground: 0 0% 100%;
 
+    /* Legacy alias so existing accent-lime references render as brand indigo */
+    --accent-lime: 232 55% 60%;
+    --accent-lime-foreground: 0 0% 100%;
 
     /* Sidebar defaults */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 26%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 91%;
-    --sidebar-ring: 0 0% 60%;
+    --sidebar-background: 210 8% 97%;
+    --sidebar-foreground: 220 11% 6%;
+    --sidebar-primary: 232 55% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 12% 96%;
+    --sidebar-accent-foreground: 220 11% 6%;
+    --sidebar-border: 214 15% 88%;
+    --sidebar-ring: 232 55% 60%;
   }
 
   .dark {
-    --background: 0 0% 6%;
-    --foreground: 0 0% 96%;
-
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 96%;
-
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 96%;
-
-    --primary: 0 0% 96%;
-    --primary-foreground: 0 0% 8%;
-
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 96%;
-
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 0 0% 14%;
-    --accent-foreground: 0 0% 96%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 96%;
-
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 0 0% 80%;
-
-    --surface-dark: 0 0% 4%;
-    --surface-dark-foreground: 0 0% 96%;
-    --surface-elevated: 0 0% 12%;
-    --text-muted: 0 0% 55%;
-    --text-subtle: 0 0% 45%;
-    --divider: 0 0% 22%;
-    --divider-light: 0 0% 18%;
-
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 0 0% 48%;
+    /* Kept minimal for shadcn compatibility — the app runs in light mode. */
+    --background: 220 11% 4%;
+    --foreground: 210 15% 97%;
+    --card: 220 11% 6%;
+    --card-foreground: 210 15% 97%;
+    --popover: 220 11% 6%;
+    --popover-foreground: 210 15% 97%;
+    --primary: 232 55% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 5% 12%;
+    --secondary-foreground: 210 15% 97%;
+    --muted: 220 5% 12%;
+    --muted-foreground: 218 7% 55%;
+    --accent: 220 5% 12%;
+    --accent-foreground: 210 15% 97%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 210 15% 97%;
+    --border: 220 5% 15%;
+    --input: 220 5% 15%;
+    --ring: 232 55% 60%;
+    --sidebar-background: 220 11% 6%;
+    --sidebar-foreground: 210 15% 97%;
+    --sidebar-primary: 232 55% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 16%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 0 0% 60%;
+    --sidebar-accent: 220 5% 12%;
+    --sidebar-accent-foreground: 210 15% 97%;
+    --sidebar-border: 220 5% 15%;
+    --sidebar-ring: 232 55% 60%;
   }
 }
 
@@ -125,61 +115,75 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Satoshi', system-ui, sans-serif;
+    font-family: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    /* Linear's signature OpenType features — geometric alternates */
+    font-feature-settings: "cv01", "ss03", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Typography utilities */
   .font-sans {
-    font-family: 'Satoshi', system-ui, sans-serif;
+    font-family: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
   }
 
-  /* Editorial headline styles */
+  .font-mono {
+    font-family: 'Berkeley Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+
+  /* Display headlines — aggressive negative letter-spacing per Linear */
   .headline-xl {
-    @apply text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-[-0.02em];
+    font-size: clamp(3rem, 8vw, 4.5rem);           /* up to 72px */
+    font-weight: 510;
+    line-height: 1;
+    letter-spacing: -0.022em;                       /* ~-1.584px @72px */
   }
 
   .headline-lg {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-[1] tracking-[-0.02em];
+    font-size: clamp(2.5rem, 6vw, 4rem);            /* up to 64px */
+    font-weight: 510;
+    line-height: 1;
+    letter-spacing: -0.022em;                       /* ~-1.408px @64px */
   }
 
   .headline-md {
-    @apply text-3xl md:text-4xl font-bold leading-[1.1] tracking-[-0.01em];
+    font-size: clamp(2rem, 4vw, 3rem);              /* up to 48px */
+    font-weight: 510;
+    line-height: 1;
+    letter-spacing: -0.022em;                       /* ~-1.056px @48px */
   }
 
   .headline-sm {
-    @apply text-2xl md:text-3xl font-medium leading-[1.15];
+    font-size: 2rem;                                /* 32px */
+    font-weight: 400;
+    line-height: 1.13;
+    letter-spacing: -0.022em;                       /* ~-0.704px */
   }
 
-  /* Body text styles */
-  .body-lg {
-    @apply text-lg md:text-xl leading-[1.6] font-light;
-  }
-
-  .body-md {
-    @apply text-base md:text-lg leading-[1.7];
-  }
-
-  .body-sm {
-    @apply text-sm leading-[1.6];
-  }
+  /* Body text */
+  .body-lg { font-size: 1.125rem; line-height: 1.6; letter-spacing: -0.009em; font-weight: 400; }
+  .body-md { font-size: 1rem; line-height: 1.5; font-weight: 400; }
+  .body-sm { font-size: 0.9375rem; line-height: 1.6; letter-spacing: -0.011em; font-weight: 400; }
 
   /* Label styles */
   .label-sm {
-    @apply text-xs uppercase tracking-[0.15em] font-medium;
+    font-size: 0.6875rem;
+    font-weight: 510;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: hsl(var(--text-muted));
   }
 
   .label-md {
-    @apply text-sm uppercase tracking-[0.1em] font-medium;
+    font-size: 0.75rem;
+    font-weight: 510;
+    letter-spacing: 0.02em;
   }
 
-  /* Horizontal rule - editorial style */
-  .divider-editorial {
-    @apply w-full h-px bg-divider-light;
-  }
+  /* Weight utility for Linear's signature 510 */
+  .font-signature { font-weight: 510; }
 
-  .divider-editorial-dark {
-    @apply w-full h-px bg-divider;
-  }
+  .divider-editorial { @apply w-full h-px bg-divider-light; }
+  .divider-editorial-dark { @apply w-full h-px bg-divider; }
 }
 
 /* Animation utilities */
@@ -189,10 +193,15 @@
   }
 
   .hover-lift {
-    @apply transition-transform duration-300 ease-out hover:-translate-y-1;
+    @apply transition-transform duration-300 ease-out hover:-translate-y-0.5;
   }
 
   .hover-fade {
     @apply transition-opacity duration-200 ease-out hover:opacity-70;
+  }
+
+  /* Linear's semi-transparent border technique — subtle chrome outlines */
+  .ring-subtle {
+    box-shadow: inset 0 0 0 1px hsl(var(--border));
   }
 }
