@@ -9,6 +9,20 @@ const FAQ = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <Layout variant="light">
+      <SEO
+        title="FAQ — Answers Before the First Call | Synplix Infotech"
+        description="Common questions about scope, timelines, pricing and support for Synplix Infotech engagements."
+        path="/faq"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }}
+      />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">FAQ</p>
