@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { webpagePlans, contentPlans, saasPlans } from "@/data/pricing";
 import { cn } from "@/lib/utils";
+import { useApp } from "@/contexts/AppContext";
 
 function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
+  const { formatPrice } = useApp();
   return (
     <div
       className={cn(
@@ -22,7 +24,7 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
       )}
       <h3 className="text-lg font-medium mb-2">{plan.name}</h3>
       <div className="mb-6 flex items-baseline gap-2">
-        <span className="text-4xl font-medium tracking-tight">{plan.price}</span>
+        <span className="text-4xl font-medium tracking-tight">{plan.price === "custom" ? "Custom" : formatPrice(plan.price)}</span>
         <span className={cn("text-sm", plan.highlighted ? "text-white/70" : "text-black/50")}>{plan.cadence}</span>
       </div>
       <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-white/80" : "text-black/70")}>
@@ -44,6 +46,7 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
 }
 
 const Pricing = () => {
+  const { formatPrice, currency } = useApp();
   return (
     <Layout variant="light">
       <div className="bg-white text-black min-h-screen">
@@ -53,7 +56,7 @@ const Pricing = () => {
             Simple plans.<br />Custom quotes when it matters.
           </h1>
           <p className="text-lg text-black/60 max-w-2xl">
-            Prices are in INR. Every engagement starts with a free 30-minute strategy call and a written proposal within 48 hours.
+            Prices shown in {currency}. Every engagement starts with a free 30-minute strategy call and a written proposal within 48 hours.
           </p>
         </section>
 
@@ -111,8 +114,8 @@ const Pricing = () => {
                   </span>
                 )}
                 <h3 className="text-base font-medium mb-1">{p.name}</h3>
-                <p className="text-3xl font-medium tracking-tight mb-1">{p.monthly}<span className="text-sm text-black/40 font-normal">/mo</span></p>
-                <p className="text-xs text-black/40 mb-4">or {p.annual}</p>
+                <p className="text-3xl font-medium tracking-tight mb-1">{p.monthly === 0 ? formatPrice(0) : formatPrice(p.monthly as number)}<span className="text-sm text-black/40 font-normal">/mo</span></p>
+                <p className="text-xs text-black/40 mb-4">{p.annual === 0 ? "—" : `or ${formatPrice(p.annual as number)}/yr`}</p>
                 <p className="text-sm text-black/60 mt-auto">{p.note}</p>
               </div>
             ))}

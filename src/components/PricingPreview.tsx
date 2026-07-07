@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { webpagePlans } from "@/data/pricing";
 import { cn } from "@/lib/utils";
+import { useApp } from "@/contexts/AppContext";
 
 export function PricingPreview() {
+  const { formatPrice } = useApp();
   return (
     <section className="bg-white text-black py-24 md:py-32 border-t border-black/5">
       <div className="container">
@@ -38,7 +40,7 @@ export function PricingPreview() {
               )}
               <h3 className={cn("text-lg font-medium mb-2", plan.highlighted ? "text-white" : "text-black")}>{plan.name}</h3>
               <div className="mb-6 flex items-baseline gap-2">
-                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-white" : "text-black")}>{plan.price}</span>
+                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-white" : "text-black")}>{plan.price === "custom" ? "Custom" : formatPrice(plan.price)}</span>
                 <span className={cn("text-sm", plan.highlighted ? "text-white/70" : "text-black/50")}>{plan.cadence}</span>
               </div>
               <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-white/80" : "text-black/70")}>
