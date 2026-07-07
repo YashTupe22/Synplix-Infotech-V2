@@ -27,11 +27,6 @@ export function ServicesSection() {
             >
               <div className="flex items-start justify-between gap-6 mb-6">
                 <span className="text-xs font-mono text-foreground/40">0{i + 1}</span>
-                <span
-                  className="inline-block h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: s.accent }}
-                  aria-hidden
-                />
               </div>
               <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-3 group-hover:translate-x-1 transition-transform">
                 {s.title}
