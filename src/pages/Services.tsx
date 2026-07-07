@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { services } from "@/data/services";
 
 const Services = () => {
   return (
     <Layout variant="light">
+      <SEO
+        title="Services — Web, SaaS, Automation & Content | Synplix Infotech"
+        description="Four practices built to compound: custom web development, SaaS platforms, business automation, and content systems for growing teams."
+        path="/services"
+      />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Services</p>

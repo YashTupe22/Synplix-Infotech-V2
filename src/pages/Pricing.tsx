@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { webpagePlans, contentPlans, saasPlans } from "@/data/pricing";
 import { cn } from "@/lib/utils";
 import { useApp } from "@/contexts/AppContext";

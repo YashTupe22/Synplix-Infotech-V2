@@ -1,8 +1,14 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 
 const Contact = () => {
   return (
     <Layout hideFooter variant="light">
+      <SEO
+        title="Contact — Start a Project | Synplix Infotech"
+        description="Tell us about your product, timeline and constraints. You'll get a written proposal within 48 hours of the call."
+        path="/contact"
+      />
       <section className="min-h-screen bg-background text-foreground pt-32 pb-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
