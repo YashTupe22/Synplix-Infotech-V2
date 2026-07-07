@@ -1,0 +1,71 @@
+# Synplix Infotech Services
+
+> Synplix Infotech Services is a web development and product engineering partner for startups, SMBs and SaaS teams. Based in Pune, India, delivering globally.
+
+## About
+
+Synplix builds custom web applications, SaaS platforms, business automation workflows, and content systems. We focus on predictable delivery, long-term scalability, and hands-on partnerships from discovery through production.
+
+## Services
+
+- **Custom Web Applications**: Full-stack web products built for speed, scale and long-term maintainability.
+- **SaaS Development**: Multi-tenant SaaS platforms with billing, auth, analytics and admin tooling.
+- **Business Automation**: Workflows and integrations that cut manual work across internal systems.
+- **Content Systems**: Structured content and growth-ready pages for marketing and product teams.
+
+## How We Work
+
+A six-phase delivery model: Discovery & Strategy, Design & Prototyping, Development, Testing & QA, Launch & Deployment, Support & Growth.
+
+### Timelines
+
+- Marketing website: 2–4 weeks
+- MVP web app: 6–8 weeks
+- Full SaaS platform: 10–16 weeks
+- Proposal turnaround: 48 hours
+
+## Pricing
+
+### Webpage Design (one-time)
+- Starter: ₹8,000 (up to 5 pages)
+- Growth: ₹18,000 (up to 15 pages, highlighted)
+- Enterprise: Custom quote
+
+### Content Creation (monthly)
+- Basic: ₹5,000/month
+- Pro: ₹12,000/month (highlighted)
+- Agency: ₹25,000/month
+
+### SaaS Subscription
+- Free: ₹0
+- Starter: ₹499/month
+- Pro: ₹999/month (highlighted)
+- Enterprise: ₹1,999/month
+
+Payment terms: 50% deposit before project commencement, balance due on completion or milestones. Invoices payable within 7 business days.
+
+## FAQ
+
+- Projects typically take 2–4 weeks (marketing site), 6–8 weeks (MVP), or 10–16 weeks (full SaaS).
+- Start by booking a free 30-minute strategy call. Written proposal within 48 hours.
+- 50% deposit required, balance on completion. Prices in INR unless specified.
+- Upon full payment, all custom code, designs and assets transfer to the client.
+- We work with clients globally, including US and UK alongside India.
+
+## Contact
+
+- Email: outreach@synplixinfotech.in
+- Phone/WhatsApp: +91 86689 18164
+- LinkedIn: https://linkedin.com/company/synplix
+- SaaS Product: https://saas.synplixinfotech.in
+
+## Technical Details
+
+- Stack: React, Next.js, Node.js, PostgreSQL, AWS
+- Hosting: Vercel
+- Location: Pune, Maharashtra, India
+
+## Legal
+
+- Privacy Policy: https://synplixinfotech.in/privacy
+- Terms of Service: https://synplixinfotech.in/terms

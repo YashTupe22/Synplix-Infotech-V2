@@ -69,7 +69,7 @@ const Pricing = () => {
         {/* Webpage plans */}
         <section className="container py-16 border-t border-foreground/10">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Webpage design</h2>
-          <p className="text-foreground/50 mb-10">One-time projects for marketing and product websites.</p>
+          <p className="text-foreground/60 mb-10">One-time projects for marketing and product websites.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {webpagePlans.map((p) => (<PlanCard key={p.name} plan={p} />))}
           </div>
@@ -78,7 +78,7 @@ const Pricing = () => {
         {/* Content plans */}
         <section className="container py-16 border-t border-foreground/10">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Content creation</h2>
-          <p className="text-foreground/50 mb-10">Monthly plans for social, blog, newsletter and ad copy.</p>
+          <p className="text-foreground/60 mb-10">Monthly plans for social, blog, newsletter and ad copy.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contentPlans.map((p) => (<PlanCard key={p.name} plan={p} />))}
           </div>
@@ -89,7 +89,7 @@ const Pricing = () => {
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
               <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Synplix SaaS subscription</h2>
-              <p className="text-foreground/50">Our multi-workspace SaaS product for teams.</p>
+              <p className="text-foreground/60">Our multi-workspace SaaS product for teams.</p>
             </div>
             <a
               href="https://saas.synplixinfotech.in"

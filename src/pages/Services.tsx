@@ -34,7 +34,7 @@ const Services = () => {
                 <div className="lg:col-span-6">
                   <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-3 flex items-center gap-3">
                     {s.title}
-                    <span className="text-foreground/30 group-hover:text-foreground group-hover:translate-x-1 transition-all">→</span>
+                    <span className="text-foreground/40 group-hover:text-foreground group-hover:translate-x-1 transition-all">→</span>
                   </h2>
                   <p className="text-foreground/60 text-lg leading-relaxed max-w-xl">{s.tagline}</p>
                 </div>

@@ -1,17 +1,8 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 export function HeroSection() {
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <section className="relative min-h-[88vh] flex items-end overflow-hidden bg-background text-foreground pt-32 pb-16 lg:pt-40 lg:pb-24">
-      {/* Soft ambient glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
@@ -25,8 +16,7 @@ export function HeroSection() {
         </div>
 
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] font-medium leading-[0.95] tracking-[-0.03em] max-w-5xl"
-          style={{ transform: `translateY(${scrollY * 0.08}px)` }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] font-medium leading-[0.95] tracking-[-0.03em] max-w-5xl will-change-transform"
         >
           We build the web apps, SaaS platforms and{" "}
           <span

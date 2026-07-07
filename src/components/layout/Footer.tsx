@@ -83,7 +83,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="pt-8 border-t border-foreground/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-foreground/40">
+        <div className="pt-8 border-t border-foreground/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-foreground/50">
           <p>© {new Date().getFullYear()} Synplix Infotech Services. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>Pune, Maharashtra · India</span>

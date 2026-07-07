@@ -41,7 +41,7 @@ export function ServicesSection() {
                   </span>
                 ))}
               </div>
-              <span className="absolute top-8 right-8 text-foreground/30 group-hover:text-foreground transition-colors" aria-hidden>
+              <span className="absolute top-8 right-8 text-foreground/40 group-hover:text-foreground transition-colors" aria-hidden>
                 ↗
               </span>
             </Link>
