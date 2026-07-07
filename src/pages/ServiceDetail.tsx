@@ -11,10 +11,10 @@ const ServiceDetail = () => {
   if (!service) {
     return (
       <Layout variant="light">
-        <div className="min-h-screen flex items-center justify-center bg-white text-black">
+        <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
           <div className="text-center">
             <h1 className="text-4xl font-medium mb-4">Service not found</h1>
-            <Link to="/services" className="text-black/60 hover:text-black">← All services</Link>
+            <Link to="/services" className="text-foreground/60 hover:text-foreground">← All services</Link>
           </div>
         </div>
       </Layout>
@@ -23,7 +23,7 @@ const ServiceDetail = () => {
 
   return (
     <Layout variant="light">
-      <div className="bg-white text-black min-h-screen">
+      <div className="bg-background text-foreground min-h-screen">
         {/* Hero */}
         <section className="relative container pt-40 pb-20 overflow-hidden">
           <div
@@ -32,41 +32,41 @@ const ServiceDetail = () => {
             style={{ background: `radial-gradient(circle, ${service.accent} 0%, transparent 60%)` }}
           />
           <div className="relative">
-            <Link to="/services" className="text-xs uppercase tracking-[0.2em] text-black/40 hover:text-black transition-colors">
+            <Link to="/services" className="text-xs uppercase tracking-[0.2em] text-foreground/40 hover:text-foreground transition-colors">
               ← All services
             </Link>
             <div className="mt-8 flex items-center gap-3">
               <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: service.accent }} />
-              <span className="text-xs uppercase tracking-[0.2em] text-black/50">0{index + 1} / 0{services.length}</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">0{index + 1} / 0{services.length}</span>
             </div>
             <h1 className="mt-6 text-5xl md:text-7xl font-medium leading-[0.95] tracking-[-0.03em] max-w-4xl">
               {service.title}
             </h1>
-            <p className="mt-6 text-xl text-black/60 max-w-2xl leading-relaxed">{service.tagline}</p>
+            <p className="mt-6 text-xl text-foreground/60 max-w-2xl leading-relaxed">{service.tagline}</p>
           </div>
         </section>
 
         <div className="container">
-          <div className="w-full h-px bg-black/10" />
+          <div className="w-full h-px bg-foreground/10" />
         </div>
 
         {/* Summary */}
         <section className="container py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
-            <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-3">Overview</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-3">Overview</p>
           </div>
-          <p className="lg:col-span-8 text-lg md:text-xl text-black/80 leading-relaxed">{service.summary}</p>
+          <p className="lg:col-span-8 text-lg md:text-xl text-foreground/80 leading-relaxed">{service.summary}</p>
         </section>
 
-        <div className="container"><div className="w-full h-px bg-black/10" /></div>
+        <div className="container"><div className="w-full h-px bg-foreground/10" /></div>
 
         {/* Focus + Deliverables */}
         <section className="container py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">Key focus areas</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Key focus areas</p>
             <ul className="space-y-4">
               {service.focus.map((f) => (
-                <li key={f} className="flex gap-4 text-black/80">
+                <li key={f} className="flex gap-4 text-foreground/80">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: service.accent }} />
                   <span>{f}</span>
                 </li>
@@ -74,11 +74,11 @@ const ServiceDetail = () => {
             </ul>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">Typical deliverables</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Typical deliverables</p>
             <ul className="space-y-4">
               {service.deliverables.map((d, i) => (
-                <li key={d} className="flex gap-4 text-black/80">
-                  <span className="font-mono text-xs text-black/40 mt-1 shrink-0">0{i + 1}</span>
+                <li key={d} className="flex gap-4 text-foreground/80">
+                  <span className="font-mono text-xs text-foreground/40 mt-1 shrink-0">0{i + 1}</span>
                   <span>{d}</span>
                 </li>
               ))}
@@ -86,14 +86,14 @@ const ServiceDetail = () => {
           </div>
         </section>
 
-        <div className="container"><div className="w-full h-px bg-black/10" /></div>
+        <div className="container"><div className="w-full h-px bg-foreground/10" /></div>
 
         {/* Stack */}
         <section className="container py-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">Common stack</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Common stack</p>
           <div className="flex flex-wrap gap-3">
             {service.stack.map((t) => (
-              <span key={t} className="text-sm border border-black/15 rounded-pill px-4 py-2 text-black/80">
+              <span key={t} className="text-sm border border-foreground/15 rounded-pill px-4 py-2 text-foreground/80">
                 {t}
               </span>
             ))}
@@ -108,7 +108,7 @@ const ServiceDetail = () => {
           >
             <div>
               <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Have a project like this?</h3>
-              <p className="text-black/60">Get a written proposal within 48 hours of your call.</p>
+              <p className="text-foreground/60">Get a written proposal within 48 hours of your call.</p>
             </div>
             <Link
               to="/contact"
@@ -122,9 +122,9 @@ const ServiceDetail = () => {
           {next && (
             <Link
               to={`/services/${next.slug}`}
-              className="mt-8 group flex items-center justify-between border-t border-black/10 pt-8"
+              className="mt-8 group flex items-center justify-between border-t border-foreground/10 pt-8"
             >
-              <span className="text-xs uppercase tracking-[0.2em] text-black/40">Next service</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-foreground/40">Next service</span>
               <span className="text-xl md:text-2xl font-medium group-hover:translate-x-1 transition-transform">
                 {next.title} →
               </span>

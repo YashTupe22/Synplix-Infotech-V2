@@ -49,37 +49,37 @@ const showcaseItems = [
 const Showcase = () => {
   return (
     <Layout variant="light">
-      <div className="bg-white text-black min-h-screen">
+      <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-black/40 mb-6">Showcase</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Showcase</p>
           <h1 className="text-5xl md:text-7xl font-medium leading-[0.95] tracking-[-0.03em] max-w-4xl mb-6">
             Selected work<br />across products and web.
           </h1>
-          <p className="text-lg text-black/60 max-w-2xl">
+          <p className="text-lg text-foreground/60 max-w-2xl">
             A snapshot of what we've shipped — SaaS platforms, custom web apps, marketing sites, and internal automation.
           </p>
         </section>
 
-        <section className="container pb-24 border-t border-black/10 pt-16">
+        <section className="container pb-24 border-t border-foreground/10 pt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {showcaseItems.map((item) => {
               const Card = (
-                <div className="group rounded-2xl border border-black/10 bg-black/[0.02] p-8 h-full flex flex-col transition-colors hover:bg-black/[0.04]">
+                <div className="group rounded-2xl border border-foreground/10 bg-foreground/[0.02] p-8 h-full flex flex-col transition-colors hover:bg-foreground/[0.04]">
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.15em] text-black/40 mb-2">{item.category}</p>
+                      <p className="text-xs uppercase tracking-[0.15em] text-foreground/40 mb-2">{item.category}</p>
                       <h3 className="text-2xl md:text-3xl font-medium tracking-tight">{item.title}</h3>
                     </div>
                     {item.external && (
-                      <span className="text-black/40 group-hover:text-black transition-colors" aria-hidden>↗</span>
+                      <span className="text-foreground/40 group-hover:text-foreground transition-colors" aria-hidden>↗</span>
                     )}
                   </div>
-                  <p className="text-black/60 mb-8 flex-1">{item.description}</p>
-                  <div className="grid grid-cols-3 gap-4 pt-6 border-t border-black/10">
+                  <p className="text-foreground/60 mb-8 flex-1">{item.description}</p>
+                  <div className="grid grid-cols-3 gap-4 pt-6 border-t border-foreground/10">
                     {item.metrics.map((m) => (
                       <div key={m.label}>
                         <p className="text-lg font-medium tracking-tight">{m.value}</p>
-                        <p className="text-xs text-black/40 uppercase tracking-wider">{m.label}</p>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider">{m.label}</p>
                       </div>
                     ))}
                   </div>
@@ -101,9 +101,9 @@ const Showcase = () => {
           </div>
         </section>
 
-        <section className="container py-24 border-t border-black/10 text-center">
+        <section className="container py-24 border-t border-foreground/10 text-center">
           <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-4">Have a project in mind?</h2>
-          <p className="text-black/60 mb-8 max-w-xl mx-auto">
+          <p className="text-foreground/60 mb-8 max-w-xl mx-auto">
             Book a free 30-minute strategy call. Written proposal in 48 hours.
           </p>
           <Link
