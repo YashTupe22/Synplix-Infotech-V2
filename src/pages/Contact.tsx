@@ -3,97 +3,66 @@ import { Layout } from "@/components/layout/Layout";
 const Contact = () => {
   return (
     <Layout hideFooter variant="dark">
-      <section className="min-h-screen flex items-center bg-black text-white pt-24">
-        <div className="container py-20 md:py-32">
-          <div className="max-w-4xl">
-            {/* Main Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.9] tracking-[-0.03em] mb-12">
-              Let's work
-              <br />
-              together.
-            </h1>
+      <section className="min-h-screen bg-black text-white pt-32 pb-20">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-7">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">Contact</p>
+              <h1 className="text-5xl md:text-7xl font-medium leading-[0.95] tracking-[-0.03em] mb-8">
+                Let&apos;s build<br />what&apos;s next.
+              </h1>
+              <p className="text-lg text-white/60 max-w-xl leading-relaxed mb-12">
+                Tell us about your product, timeline and constraints. You&apos;ll get a written proposal within 48 hours of the call.
+              </p>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-400 max-w-xl mb-16 leading-relaxed">
-              I'm currently available for select projects and consulting engagements. 
-              If you're building something meaningful, I'd love to hear about it.
-            </p>
-
-            {/* Email CTA */}
-            <div className="mb-20">
-              <p className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-4">Get in touch</p>
-              <a
-                href="mailto:hello@example.com"
-                className="text-2xl md:text-3xl lg:text-4xl font-medium text-white hover:text-gray-300 transition-colors inline-flex items-center gap-4 group"
-              >
-                hello@example.com
-                <span className="inline-block transition-transform group-hover:translate-x-2 text-gray-500">→</span>
-              </a>
-            </div>
-
-            {/* Divider */}
-            <div className="w-full h-px bg-gray-800 mb-16" />
-
-            {/* Social Links */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <div>
-                <p className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-4">For Networking</p>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lg text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 group"
-                >
-                  LinkedIn
-                  <span className="inline-block transition-transform group-hover:translate-x-1 text-gray-500">↗</span>
-                </a>
-              </div>
-
-              <div>
-                <p className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-4">For Updates</p>
-                <div className="flex flex-col gap-2">
+              <div className="space-y-8">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-3">Email</p>
                   <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 group"
+                    href="mailto:outreach@synplixinfotech.in"
+                    className="text-2xl md:text-3xl font-medium hover:opacity-80 transition-opacity inline-flex items-center gap-3"
+                    style={{ color: "hsl(var(--accent-lime))" }}
                   >
-                    Twitter
-                    <span className="inline-block transition-transform group-hover:translate-x-1 text-gray-500">↗</span>
+                    outreach@synplixinfotech.in <span aria-hidden>→</span>
                   </a>
+                </div>
+
+                <div>
+                  <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-3">Phone / WhatsApp</p>
                   <a
-                    href="https://instagram.com"
+                    href="https://wa.me/918668918164"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 group"
+                    className="text-xl md:text-2xl font-medium hover:text-white/80 transition-colors inline-flex items-center gap-3"
                   >
-                    Instagram
-                    <span className="inline-block transition-transform group-hover:translate-x-1 text-gray-500">↗</span>
+                    +91 86689 18164 <span aria-hidden>↗</span>
                   </a>
                 </div>
               </div>
-
-              <div>
-                <p className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-4">For Work</p>
-                <a
-                  href="https://dribbble.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lg text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 group"
-                >
-                  Dribbble
-                  <span className="inline-block transition-transform group-hover:translate-x-1 text-gray-500">↗</span>
-                </a>
-              </div>
             </div>
+
+            <aside className="lg:col-span-5 space-y-8">
+              <div className="rounded-2xl border border-white/10 p-6">
+                <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-3">Office</p>
+                <p className="text-white/80">Pune, Maharashtra</p>
+                <p className="text-white/60 text-sm">India</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 p-6">
+                <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-3">Hours</p>
+                <p className="text-white/80">Mon – Fri, 09:00 – 18:00 IST</p>
+                <p className="text-white/60 text-sm mt-2">Remote-first. Serving clients in India, US and UK.</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 p-6">
+                <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-3">Also on</p>
+                <div className="flex flex-col gap-2">
+                  <a href="https://linkedin.com/company/synplix" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white">LinkedIn ↗</a>
+                  <a href="https://saas.synplixinfotech.in" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white">Synplix SaaS ↗</a>
+                </div>
+              </div>
+            </aside>
           </div>
 
-          {/* Bottom text */}
-          <div className="mt-32 md:mt-48">
-            <p className="text-sm text-gray-600">
-              © {new Date().getFullYear()} Your Name. All rights reserved.
-            </p>
-          </div>
+          <p className="mt-32 text-sm text-white/40">© {new Date().getFullYear()} Synplix Infotech Services.</p>
         </div>
       </section>
     </Layout>

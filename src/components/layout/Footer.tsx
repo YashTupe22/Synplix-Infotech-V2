@@ -1,84 +1,95 @@
 import { Link } from "react-router-dom";
 
-const socialLinks = [
+const columns = [
   {
-    category: "For Networking",
+    heading: "Services",
     links: [
-      { label: "LinkedIn", href: "https://linkedin.com" },
+      { label: "Custom Web Applications", to: "/services/custom-web-apps" },
+      { label: "SaaS Development", to: "/services/saas-development" },
+      { label: "Business Automation", to: "/services/business-automation" },
+      { label: "Content Systems", to: "/services/content-systems" },
     ],
   },
   {
-    category: "For Updates",
+    heading: "Company",
     links: [
-      { label: "Twitter", href: "https://twitter.com" },
-      { label: "Instagram", href: "https://instagram.com" },
+      { label: "How we work", to: "/how-we-work" },
+      { label: "Pricing", to: "/pricing" },
+      { label: "FAQ", to: "/faq" },
+      { label: "Contact", to: "/contact" },
     ],
   },
   {
-    category: "For Work",
+    heading: "Legal",
     links: [
-      { label: "Dribbble", href: "https://dribbble.com" },
+      { label: "Privacy policy", to: "/privacy" },
+      { label: "Terms of service", to: "/terms" },
     ],
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white border-t border-white/5">
       <div className="container py-20 md:py-28">
-        {/* Main CTA */}
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[0.95] tracking-[-0.02em] mb-6">
-            Let's connect.
+        <div className="mb-20 max-w-4xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-6">Let&apos;s build</p>
+          <h2 className="text-4xl md:text-6xl font-medium leading-[0.95] tracking-[-0.02em] mb-8">
+            A partner for the product<br />you actually want to ship.
           </h2>
-          <a
-            href="mailto:hello@example.com"
-            className="text-lg md:text-xl text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group"
-          >
-            hello@example.com
-            <span className="inline-block transition-transform group-hover:translate-x-1 text-gray-500">→</span>
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="mailto:outreach@synplixinfotech.in"
+              className="inline-flex items-center gap-2 rounded-pill px-5 py-3 text-sm font-medium"
+              style={{ backgroundColor: "hsl(var(--accent-lime))", color: "hsl(var(--accent-lime-foreground))" }}
+            >
+              outreach@synplixinfotech.in →
+            </a>
+            <a
+              href="https://wa.me/918668918164"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-pill border border-white/20 px-5 py-3 text-sm text-white hover:bg-white/5 transition-colors"
+            >
+              WhatsApp +91 86689 18164
+            </a>
+          </div>
         </div>
 
-        {/* Social Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
-          {socialLinks.map((group) => (
-            <div key={group.category}>
-              <p className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-4">{group.category}</p>
-              <div className="flex flex-col gap-2">
-                {group.links.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 group"
-                  >
-                    {link.label}
-                    <span className="inline-block transition-transform group-hover:translate-x-1 text-gray-500">↗</span>
-                  </a>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: "hsl(var(--accent-lime))" }} />
+              <span className="text-sm font-medium">Synplix</span>
+            </div>
+            <p className="text-sm text-white/50 leading-relaxed">
+              Web, SaaS and automation partner for startups and growing businesses. Pune, India — delivering globally.
+            </p>
+          </div>
+
+          {columns.map((col) => (
+            <div key={col.heading}>
+              <p className="text-xs uppercase tracking-[0.15em] text-white/40 mb-4">{col.heading}</p>
+              <ul className="space-y-2">
+                {col.links.map((link) => (
+                  <li key={link.to}>
+                    <Link to={link.to} className="text-sm text-white/70 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Marco Coppeto. All rights reserved.
-          </p>
-          <nav className="flex items-center gap-8">
-            <Link to="/" className="text-sm text-gray-500 hover:text-white transition-colors">
-              Work
-            </Link>
-            <Link to="/about" className="text-sm text-gray-500 hover:text-white transition-colors">
-              About
-            </Link>
-            <Link to="/contact" className="text-sm text-gray-500 hover:text-white transition-colors">
-              Contact
-            </Link>
-          </nav>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-white/40">
+          <p>© {new Date().getFullYear()} Synplix Infotech Services. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <span>Pune, Maharashtra · India</span>
+            <a href="https://linkedin.com/company/synplix" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn ↗</a>
+            <a href="https://saas.synplixinfotech.in" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Synplix SaaS ↗</a>
+          </div>
         </div>
       </div>
     </footer>

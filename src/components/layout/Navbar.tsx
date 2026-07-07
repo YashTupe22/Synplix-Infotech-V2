@@ -1,180 +1,115 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
 
-interface NavbarProps {
-  variant?: "light" | "dark";
-}
+interface NavbarProps { variant?: "light" | "dark"; }
 
-// Grid icon (4 squares)
-function GridIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-      <rect x="1" y="1" width="6" height="6" rx="1" />
-      <rect x="9" y="1" width="6" height="6" rx="1" />
-      <rect x="1" y="9" width="6" height="6" rx="1" />
-      <rect x="9" y="9" width="6" height="6" rx="1" />
-    </svg>
-  );
-}
+const navItems = [
+  { to: "/services", label: "Services" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/how-we-work", label: "How we work" },
+  { to: "/faq", label: "FAQ" },
+];
 
-// List icon (3 horizontal lines)
-function ListIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-      <rect x="1" y="2" width="14" height="2" rx="1" />
-      <rect x="1" y="7" width="14" height="2" rx="1" />
-      <rect x="1" y="12" width="14" height="2" rx="1" />
-    </svg>
-  );
-}
-
-export function Navbar({ variant = "light" }: NavbarProps) {
-  const location = useLocation();
-  const [scrolled, setScrolled] = useState(false);
-
+export function Navbar({ variant = "dark" }: NavbarProps) {
   const isDark = variant === "dark";
-  const isGridActive = location.pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => { setOpen(false); }, [location.pathname]);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-20 py-5 lg:py-8">
-      <div className="flex items-center justify-between">
-        {/* Left: Name/Location */}
-        <Link 
-          to="/" 
-          className={cn(
-            "text-xs uppercase tracking-[0.12em] font-medium transition-opacity hover:opacity-60",
-            isDark ? "text-white" : "text-black"
-          )}
-        >
-          Marco Coppeto
-          <span className={cn(
-            "block lg:inline lg:ml-2",
-            isDark ? "text-gray-500" : "text-gray-400"
-          )}>
-            Brooklyn, NY
-          </span>
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled
+          ? isDark
+            ? "bg-black/80 backdrop-blur-md border-b border-white/5"
+            : "bg-white/80 backdrop-blur-md border-b border-black/5"
+          : "bg-transparent",
+      )}
+    >
+      <div className="container flex items-center justify-between py-4 lg:py-5">
+        <Link to="/" className={cn("flex items-center gap-2 font-medium tracking-tight", isDark ? "text-white" : "text-black")}>
+          <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: "hsl(var(--accent-lime))" }} aria-hidden />
+          <span className="text-sm md:text-base">Synplix</span>
+          <span className={cn("hidden sm:inline text-xs uppercase tracking-[0.15em]", isDark ? "text-white/40" : "text-black/40")}>Infotech</span>
         </Link>
 
-        {/* Center: Floating Toggle Menu with Sliding Indicator */}
-        <div
-          className={cn(
-            "fixed right-6 md:right-auto md:left-1/2 md:-translate-x-1/2 top-5 lg:top-8 lg:right-auto flex items-center rounded-full transition-all duration-300 bg-gray-900",
-            scrolled 
-              ? "shadow-lg" 
-              : "shadow-md"
-          )}
-        >
-          {/* Sliding white indicator */}
-          <div 
-            className={cn(
-              "absolute top-0 h-full w-14 bg-white rounded-full transition-all duration-300 ease-out",
-              isGridActive ? "left-0" : "left-14"
-            )}
-          />
-          
-          {/* Grid button */}
-          <Link
-            to="/"
-            className={cn(
-              "relative z-10 flex items-center justify-center w-14 h-10 transition-colors duration-300",
-              isGridActive 
-                ? "text-black" 
-                : "text-gray-400 hover:text-white"
-            )}
-          >
-            <GridIcon />
-          </Link>
-          
-          {/* List button */}
-          <Link
-            to="/about"
-            className={cn(
-              "relative z-10 flex items-center justify-center w-14 h-10 transition-colors duration-300",
-              !isGridActive
-                ? "text-black" 
-                : "text-gray-400 hover:text-white"
-            )}
-          >
-            <ListIcon />
-          </Link>
-        </div>
+        <nav className="hidden lg:flex items-center gap-8">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                cn(
+                  "text-sm transition-colors",
+                  isDark
+                    ? isActive ? "text-white" : "text-white/60 hover:text-white"
+                    : isActive ? "text-black" : "text-black/60 hover:text-black",
+                )
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
 
-        {/* Right: Social Links + Contacts (hidden on mobile) */}
-        <div className="hidden md:flex items-center gap-4">
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1",
-                isDark 
-                  ? "text-gray-400 hover:text-white" 
-                  : "text-gray-500 hover:text-black"
-              )}
-            >
-              TW<span className="text-[10px]">↗</span>
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1",
-                isDark 
-                  ? "text-gray-400 hover:text-white" 
-                  : "text-gray-500 hover:text-black"
-              )}
-            >
-              IG<span className="text-[10px]">↗</span>
-            </a>
-            <a
-              href="https://dribbble.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1",
-                isDark 
-                  ? "text-gray-400 hover:text-white" 
-                  : "text-gray-500 hover:text-black"
-              )}
-            >
-              DRIB<span className="text-[10px]">↗</span>
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1",
-                isDark 
-                  ? "text-gray-400 hover:text-white" 
-                  : "text-gray-500 hover:text-black"
-              )}
-            >
-              LIN<span className="text-[10px]">↗</span>
-            </a>
-          </div>
+        <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            className={cn(
-              "text-xs uppercase tracking-[0.12em] font-medium transition-opacity hover:opacity-60",
-              isDark ? "text-white" : "text-black"
-            )}
+            className="hidden md:inline-flex items-center gap-2 rounded-pill px-4 py-2 text-sm font-medium transition-transform hover:-translate-y-0.5"
+            style={{ backgroundColor: "hsl(var(--accent-lime))", color: "hsl(var(--accent-lime-foreground))" }}
           >
-            Contacts
+            Start a project <span aria-hidden>→</span>
           </Link>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className={cn("lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md", isDark ? "text-white" : "text-black")}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </div>
+
+      {open && (
+        <div className={cn("lg:hidden border-t", isDark ? "bg-black border-white/10" : "bg-white border-black/10")}>
+          <div className="container py-6 flex flex-col gap-4">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) =>
+                  cn(
+                    "text-base py-2",
+                    isDark ? (isActive ? "text-white" : "text-white/70") : (isActive ? "text-black" : "text-black/70"),
+                  )
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <Link
+              to="/contact"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-pill px-4 py-3 text-sm font-medium"
+              style={{ backgroundColor: "hsl(var(--accent-lime))", color: "hsl(var(--accent-lime-foreground))" }}
+            >
+              Start a project →
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

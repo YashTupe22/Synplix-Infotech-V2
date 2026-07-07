@@ -71,6 +71,10 @@ export default {
         "text-subtle": "hsl(var(--text-subtle))",
         divider: "hsl(var(--divider))",
         "divider-light": "hsl(var(--divider-light))",
+        "accent-lime": {
+          DEFAULT: "hsl(var(--accent-lime))",
+          foreground: "hsl(var(--accent-lime-foreground))",
+        },
       },
       fontFamily: {
         sans: ["'Satoshi'", "system-ui", "sans-serif"],
