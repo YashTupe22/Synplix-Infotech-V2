@@ -73,57 +73,32 @@
   }
 
   .dark {
-    /* Linear dark palette — DESIGN.md */
-    --background: 220 6% 4%;           /* #08090a marketing black */
-    --foreground: 210 11% 97%;         /* #f7f8f8 warm near-white */
-
-    --card: 220 5% 6%;                 /* #0f1011 panel */
-    --card-foreground: 210 11% 97%;
-
-    --popover: 220 5% 6%;
-    --popover-foreground: 210 11% 97%;
-
-    --primary: 232 55% 60%;            /* #5e6ad2 brand */
+    /* Kept minimal for shadcn compatibility — the app runs in light mode. */
+    --background: 220 11% 4%;
+    --foreground: 210 15% 97%;
+    --card: 220 11% 6%;
+    --card-foreground: 210 15% 97%;
+    --popover: 220 11% 6%;
+    --popover-foreground: 210 15% 97%;
+    --primary: 232 55% 60%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 220 5% 9%;            /* #16181a slight elevation */
-    --secondary-foreground: 210 11% 97%;
-
-    --muted: 220 5% 9%;
-    --muted-foreground: 218 8% 60%;    /* #8a8f98 */
-
-    --accent: 220 5% 15%;              /* #23252a */
-    --accent-foreground: 210 11% 97%;
-
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 210 11% 97%;
-
-    --border: 220 5% 15%;              /* #23252a */
+    --secondary: 220 5% 12%;
+    --secondary-foreground: 210 15% 97%;
+    --muted: 220 5% 12%;
+    --muted-foreground: 218 7% 55%;
+    --accent: 220 5% 12%;
+    --accent-foreground: 210 15% 97%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 210 15% 97%;
+    --border: 220 5% 15%;
     --input: 220 5% 15%;
     --ring: 232 55% 60%;
-
-    --surface: 220 5% 6%;
-    --surface-elevated: 220 5% 10%;    /* #191a1b */
-    --text-secondary: 218 8% 78%;
-    --text-muted: 218 8% 60%;          /* #8a8f98 */
-    --text-subtle: 218 8% 45%;
-    --divider: 220 5% 15%;
-    --divider-light: 220 5% 12%;
-
-    --brand: 232 55% 60%;
-    --brand-hover: 235 100% 72%;       /* #7170ff */
-    --brand-glow: 234 100% 76%;
-    --brand-foreground: 0 0% 100%;
-
-    --accent-lime: 232 55% 60%;
-    --accent-lime-foreground: 0 0% 100%;
-
-    --sidebar-background: 220 6% 4%;
-    --sidebar-foreground: 210 11% 97%;
+    --sidebar-background: 220 11% 6%;
+    --sidebar-foreground: 210 15% 97%;
     --sidebar-primary: 232 55% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 5% 9%;
-    --sidebar-accent-foreground: 210 11% 97%;
+    --sidebar-accent: 220 5% 12%;
+    --sidebar-accent-foreground: 210 15% 97%;
     --sidebar-border: 220 5% 15%;
     --sidebar-ring: 232 55% 60%;
   }
@@ -229,51 +204,4 @@
   .ring-subtle {
     box-shadow: inset 0 0 0 1px hsl(var(--border));
   }
-}
-
-/* ============================================================
-   DARK MODE — global overrides for pages that hardcode
-   bg-white / text-black / border-black utilities. Flips the
-   whole app to the Linear-dark palette when `.dark` is on <html>.
-   ============================================================ */
-@layer utilities {
-  /* Surfaces */
-  .dark .bg-white { background-color: #08090a; }
-  .dark .bg-white\/80 { background-color: rgba(15,16,17,0.85); }
-  .dark .bg-black { background-color: #f7f8f8; }
-  .dark .bg-black\/80 { background-color: rgba(247,248,248,0.85); }
-  .dark .bg-black\/10 { background-color: rgba(255,255,255,0.06); }
-  .dark .bg-black\/\[0\.02\] { background-color: rgba(255,255,255,0.02); }
-  .dark .bg-black\/\[0\.04\] { background-color: rgba(255,255,255,0.04); }
-  .dark .bg-black\/\[0\.06\] { background-color: rgba(255,255,255,0.05); }
-
-  .dark .bg-neutral-950\/85 { background-color: rgba(8,9,10,0.85); }
-
-  /* Text */
-  .dark .text-black { color: #f7f8f8; }
-  .dark .text-black\/80 { color: rgba(247,248,248,0.85); }
-  .dark .text-black\/70 { color: rgba(247,248,248,0.75); }
-  .dark .text-black\/60 { color: rgba(247,248,248,0.65); }
-  .dark .text-black\/50 { color: rgba(247,248,248,0.55); }
-  .dark .text-black\/40 { color: rgba(247,248,248,0.45); }
-  .dark .text-black\/30 { color: rgba(247,248,248,0.35); }
-  .dark .text-white { color: #08090a; }
-  .dark .text-white\/80 { color: rgba(8,9,10,0.85); }
-  .dark .text-white\/70 { color: rgba(8,9,10,0.75); }
-
-  /* Borders */
-  .dark .border-black\/5  { border-color: rgba(255,255,255,0.05); }
-  .dark .border-black\/10 { border-color: rgba(255,255,255,0.08); }
-  .dark .border-black\/15 { border-color: rgba(255,255,255,0.1); }
-  .dark .border-black\/20 { border-color: rgba(255,255,255,0.12); }
-  .dark .border-black\/30 { border-color: rgba(255,255,255,0.16); }
-  .dark .border-white     { border-color: #23252a; }
-  .dark .border-white\/10 { border-color: rgba(255,255,255,0.08); }
-
-  /* Hover states */
-  .dark .hover\:bg-black:hover     { background-color: #f7f8f8; }
-  .dark .hover\:bg-black\/5:hover  { background-color: rgba(255,255,255,0.05); }
-  .dark .hover\:bg-black\/85:hover { background-color: rgba(247,248,248,0.9); }
-  .dark .hover\:text-black:hover   { color: #f7f8f8; }
-  .dark .hover\:text-black\/80:hover { color: rgba(247,248,248,0.85); }
 }
