@@ -74,7 +74,7 @@ const Privacy = () => (
     <SEO
       title="Privacy Policy | Synplix Infotech"
       description="Read the Synplix Infotech Services Privacy Policy to understand how we collect, use, and protect your personal information."
-      path="/privacy"
+      path="/privacy-policy"
     />
     <div className="bg-background text-foreground min-h-screen">
       <section className="container pt-40 pb-10">
