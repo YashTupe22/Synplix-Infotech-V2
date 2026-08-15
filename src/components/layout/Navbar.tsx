@@ -12,6 +12,7 @@ const navItems = [
   { to: "/services", label: "Services" },
   { to: "/showcase", label: "Showcase" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/about", label: "About" },
   { to: "/how-we-work", label: "How we work" },
   { to: "/faq", label: "FAQ" },
 ];
@@ -45,7 +46,7 @@ export function Navbar({ variant = "dark" }: NavbarProps) {
     >
       <div className="container flex items-center justify-between py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:py-5">
         <Link to="/" className="flex items-center gap-2 font-medium tracking-tight text-foreground lg:justify-self-start">
-          <img src={logo} alt="Synplix Infotech" className="h-8 w-auto" width="32" height="32" />
+          <img src={logo} alt="Synplix Infotech" className="h-12 w-auto" width="48" height="48" />
         </Link>
 
 

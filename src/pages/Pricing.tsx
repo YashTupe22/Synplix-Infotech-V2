@@ -1,17 +1,24 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
-import { webpagePlans, contentPlans, saasPlans } from "@/data/pricing";
+import { webpagePlans, contentPlans, WebPlan, ContentPlan } from "@/data/pricing";
 import { cn } from "@/lib/utils";
-import { useApp } from "@/contexts/AppContext";
 
-function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
-  const { formatPrice } = useApp();
+type Plan = WebPlan | ContentPlan;
+
+function isWebPlan(plan: Plan): plan is WebPlan {
+  return "tagline" in plan;
+}
+
+function PlanCard({ plan }: { plan: Plan }) {
+  const webPlan = isWebPlan(plan) ? plan : null;
   return (
     <div
       className={cn(
         "relative rounded-2xl border p-8 flex flex-col",
-        plan.highlighted ? "border-transparent bg-primary text-primary-foreground" : "border-foreground/10 bg-foreground/[0.02] text-foreground",
+        plan.highlighted
+          ? "border-transparent bg-primary text-primary-foreground"
+          : "border-foreground/10 bg-foreground/[0.02] text-foreground",
       )}
       style={plan.highlighted ? { boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
     >
@@ -23,31 +30,53 @@ function PlanCard({ plan }: { plan: (typeof webpagePlans)[number] }) {
           Most popular
         </span>
       )}
-      <h3 className="text-lg font-medium mb-2">{plan.name}</h3>
-      <div className="mb-6 flex items-baseline gap-2">
-        <span className="text-4xl font-medium tracking-tight">{plan.price === "custom" ? "Custom" : formatPrice(plan.price)}</span>
+      <h3 className="text-lg font-medium mb-1">{plan.name}</h3>
+      {webPlan && (
+        <p className={cn("text-sm mb-4", plan.highlighted ? "text-primary-foreground/70" : "text-foreground/50")}>{webPlan.tagline}</p>
+      )}
+      <div className="mb-4 flex items-baseline gap-2">
+        <span className="text-4xl font-medium tracking-tight">₹{plan.price.toLocaleString("en-IN")}</span>
         <span className={cn("text-sm", plan.highlighted ? "text-primary-foreground/70" : "text-foreground/50")}>{plan.cadence}</span>
       </div>
+      {webPlan && (
+        <div className="mb-6">
+          <p className={cn("text-xs font-medium uppercase tracking-wider mb-2", plan.highlighted ? "text-primary-foreground/60" : "text-foreground/40")}>Best for</p>
+          <div className="flex flex-wrap gap-1.5">
+            {webPlan.bestFor.map((item) => (
+              <span
+                key={item}
+                className={cn(
+                  "text-xs px-2 py-0.5 rounded-full",
+                  plan.highlighted ? "bg-primary-foreground/10 text-primary-foreground/80" : "bg-foreground/5 text-foreground/60",
+                )}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-primary-foreground/80" : "text-foreground/70")}>
         {plan.features.map((f) => (
-          <li key={f} className="text-sm flex gap-2"><span aria-hidden>›</span>{f}</li>
+          <li key={f} className="text-sm flex gap-2"><span aria-hidden>✓</span>{f}</li>
         ))}
       </ul>
       <Link
         to="/contact"
         className={cn(
           "inline-flex items-center justify-center gap-2 rounded-pill py-3 text-sm font-medium transition-colors",
-          plan.highlighted ? "bg-primary text-primary-foreground hover:bg-foreground/85" : "border border-foreground/20 hover:bg-foreground/5",
+          plan.highlighted
+            ? "bg-foreground text-background hover:bg-foreground/90"
+            : "border border-foreground/20 hover:bg-foreground/5",
         )}
       >
-        Get started →
+        {webPlan ? webPlan.cta : "Get Started"} <span aria-hidden>→</span>
       </Link>
     </div>
   );
 }
 
 const Pricing = () => {
-  const { formatPrice, currency } = useApp();
   return (
     <Layout variant="light">
       <SEO
@@ -62,13 +91,13 @@ const Pricing = () => {
             Simple plans.<br />Custom quotes when it matters.
           </h1>
           <p className="text-lg text-foreground/60 max-w-2xl">
-            Prices shown in {currency}. Every engagement starts with a free 30-minute strategy call and a written proposal within 48 hours.
+            Every engagement starts with a free 30-minute strategy call and a written proposal within 48 hours.
           </p>
         </section>
 
-        {/* Webpage plans */}
+        {/* Website Development plans */}
         <section className="container py-16 border-t border-foreground/10">
-          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Webpage design</h2>
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Website Development</h2>
           <p className="text-foreground/60 mb-10">One-time projects for marketing and product websites.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {webpagePlans.map((p) => (<PlanCard key={p.name} plan={p} />))}
@@ -84,64 +113,26 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* SaaS plans */}
+        {/* Shared info */}
         <section className="container py-16 border-t border-foreground/10">
-          <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">Synplix SaaS subscription</h2>
-              <p className="text-foreground/60">Our multi-workspace SaaS product for teams.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <p className="text-2xl font-medium tracking-tight mb-1">Free 30-minute strategy call</p>
+              <p className="text-sm text-foreground/50">Start with a conversation about your goals</p>
             </div>
-            <a
-              href="https://saas.synplixinfotech.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-foreground/60 hover:text-foreground transition-colors"
-            >
-              Try the product ↗
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {saasPlans.map((p) => (
-              <div
-                key={p.name}
-                className={cn(
-                  "rounded-2xl border p-6 flex flex-col",
-                  p.highlighted ? "border-transparent bg-foreground/[0.06]" : "border-foreground/10 bg-foreground/[0.02]",
-                )}
-                style={p.highlighted ? { boxShadow: "0 0 0 1px hsl(var(--accent-lime))" } : undefined}
-              >
-                {p.highlighted && (
-                  <span
-                    className="self-start mb-3 text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-pill"
-                    style={{ backgroundColor: "hsl(var(--accent-lime))", color: "hsl(var(--accent-lime-foreground))" }}
-                  >
-                    Most popular
-                  </span>
-                )}
-                <h3 className="text-base font-medium mb-1">{p.name}</h3>
-                <p className="text-3xl font-medium tracking-tight mb-1">{p.monthly === 0 ? formatPrice(0) : formatPrice(p.monthly as number)}<span className="text-sm text-foreground/40 font-normal">/mo</span></p>
-                <p className="text-xs text-foreground/40 mb-4">{p.annual === 0 ? "—" : `or ${formatPrice(p.annual as number)}/yr`}</p>
-                <p className="text-sm text-foreground/60 mt-auto">{p.note}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Payment terms */}
-        <section className="container py-16 border-t border-foreground/10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-foreground/40 mb-3">Payment terms</p>
-              <h2 className="text-2xl md:text-3xl font-medium tracking-tight">Predictable, milestone-based.</h2>
+            <div className="text-center">
+              <p className="text-2xl font-medium tracking-tight mb-1">Written proposal within 48 hours</p>
+              <p className="text-sm text-foreground/50">Clear scope, timeline and pricing</p>
             </div>
-            <ul className="lg:col-span-8 space-y-3 text-foreground/70">
-              <li>· 50% deposit before project commencement</li>
-              <li>· Balance due on completion or per milestones</li>
-              <li>· Invoices payable within 7 business days</li>
-              <li>· Late payments may attract 1.5% monthly interest</li>
-              <li>· Prices quoted in INR unless otherwise specified</li>
-            </ul>
+            <div className="text-center">
+              <p className="text-2xl font-medium tracking-tight mb-1">50% upfront · 50% before deployment</p>
+              <p className="text-sm text-foreground/50">Simple, milestone-based payments</p>
+            </div>
+          </div>
+          <div className="text-center">
+            <p className="text-foreground/60">
+              Need something specific? We can customize any plan to fit your business.
+            </p>
           </div>
         </section>
       </div>

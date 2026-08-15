@@ -5,7 +5,10 @@ export interface WebPlan {
   price: PriceValue;
   cadence: string;
   highlighted?: boolean;
+  tagline: string;
+  bestFor: string[];
   features: string[];
+  cta: string;
 }
 
 export interface ContentPlan {
@@ -27,22 +30,64 @@ export interface SaasPlan {
 export const webpagePlans: WebPlan[] = [
   {
     name: "Starter",
-    price: 8000,
+    price: 4999,
     cadence: "one-time",
-    features: ["Up to 5 pages", "Responsive layout", "Contact form", "Basic SEO", "1 revision round"],
+    tagline: "Get your business online.",
+    bestFor: ["Local businesses", "Freelancers", "Professionals", "New businesses", "Small shops & services"],
+    features: [
+      "Up to 5 pages",
+      "Custom professional design",
+      "Mobile, tablet & desktop responsive",
+      "WhatsApp integration",
+      "Contact / enquiry form",
+      "Click-to-call button",
+      "Google Maps integration",
+      "Social media integration",
+      "Basic on-page SEO",
+      "SEO-friendly URLs & metadata",
+      "Google Business Profile linking",
+      "Performance optimization",
+      "Favicon & basic branding",
+      "1 revision round",
+    ],
+    cta: "Get Started",
   },
   {
-    name: "Growth",
-    price: 18000,
+    name: "Business",
+    price: 9999,
     cadence: "one-time",
     highlighted: true,
-    features: ["Up to 15 pages", "Custom interactions", "CMS integration", "Analytics setup", "3 revision rounds"],
+    tagline: "Turn your website into a growth tool.",
+    bestFor: ["Growing businesses", "Startups", "Service businesses", "Businesses generating online leads"],
+    features: [
+      "Up to 10 pages",
+      "Google Analytics setup",
+      "Google Search Console setup",
+      "CMS / Blog integration",
+      "Custom interactions",
+      "Advanced SEO setup",
+      "Lead capture optimization",
+      "2 revision rounds",
+    ],
+    cta: "Choose Business",
   },
   {
-    name: "Enterprise",
-    price: "custom",
-    cadence: "on request",
-    features: ["Unlimited pages", "Custom portals", "API integrations", "Priority support", "Dedicated PM"],
+    name: "Professional",
+    price: 14999,
+    cadence: "one-time",
+    tagline: "Build a more powerful digital presence.",
+    bestFor: ["Established businesses", "Companies requiring advanced functionality", "Businesses needing integrations"],
+    features: [
+      "Up to 20 pages",
+      "Payment gateway integration",
+      "API integrations",
+      "Advanced forms",
+      "Custom features",
+      "Advanced functionality",
+      "Priority support",
+      "3 revision rounds",
+    ],
+    cta: "Talk to Us",
   },
 ];
 

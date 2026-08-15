@@ -16,7 +16,7 @@ export function PricingPreview() {
             </h2>
           </div>
           <Link to="/pricing" className="text-sm text-foreground/60 hover:text-foreground transition-colors">
-            Content & SaaS plans →
+            Content plans →
           </Link>
         </div>
 
@@ -38,15 +38,16 @@ export function PricingPreview() {
                   Most popular
                 </span>
               )}
-              <h3 className={cn("text-lg font-medium mb-2", plan.highlighted ? "text-primary-foreground" : "text-foreground")}>{plan.name}</h3>
+              <h3 className={cn("text-lg font-medium mb-1", plan.highlighted ? "text-primary-foreground" : "text-foreground")}>{plan.name}</h3>
+              <p className={cn("text-sm mb-4", plan.highlighted ? "text-primary-foreground/70" : "text-foreground/50")}>{plan.tagline}</p>
               <div className="mb-6 flex items-baseline gap-2">
-                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-primary-foreground" : "text-foreground")}>{plan.price === "custom" ? "Custom" : formatPrice(plan.price)}</span>
+                <span className={cn("text-4xl font-medium tracking-tight", plan.highlighted ? "text-primary-foreground" : "text-foreground")}>₹{plan.price.toLocaleString("en-IN")}</span>
                 <span className={cn("text-sm", plan.highlighted ? "text-primary-foreground/70" : "text-foreground/50")}>{plan.cadence}</span>
               </div>
               <ul className={cn("space-y-2 mb-8 flex-1", plan.highlighted ? "text-primary-foreground/80" : "text-foreground/70")}>
-                {plan.features.map((f) => (
+                {plan.features.slice(0, 6).map((f) => (
                   <li key={f} className="text-sm flex gap-2">
-                    <span aria-hidden>›</span>
+                    <span aria-hidden>✓</span>
                     {f}
                   </li>
                 ))}
@@ -56,11 +57,11 @@ export function PricingPreview() {
                 className={cn(
                   "inline-flex items-center justify-center gap-2 rounded-pill py-3 text-sm font-medium transition-colors",
                   plan.highlighted
-                    ? "bg-primary text-primary-foreground hover:bg-foreground/85"
+                    ? "bg-foreground text-background hover:bg-foreground/90"
                     : "border border-foreground/20 hover:bg-foreground/5",
                 )}
               >
-                Get started →
+                {plan.cta} <span aria-hidden>→</span>
               </Link>
             </div>
           ))}
