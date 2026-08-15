@@ -7,9 +7,10 @@ const HowWeWork = () => {
   return (
     <Layout variant="light">
       <SEO
-        title="How We Work — Our Delivery Process | Synplix Infotech"
-        description="Short cycles, working previews from week one, and a support layer that follows the product into growth. Strategy, design, build, scale."
+        title="How We Work — Our Development Process | Synplix Infotech"
+        description="Synplix Infotech's delivery process: short cycles, working previews from week one, and support that follows your product into growth."
         path="/how-we-work"
+        keywords="synplix process, web development methodology, agile development india, how we work, synplix delivery"
       />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">

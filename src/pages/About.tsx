@@ -108,9 +108,10 @@ const About = () => {
   return (
     <Layout variant="light">
       <SEO
-        title="About Synplix Infotech | AI & Technology Solutions for Businesses"
-        description="Learn how Synplix Infotech helps Indian businesses grow with AI, web development, automation, SEO and modern technology solutions."
+        title="About Synplix Infotech — Web Development & AI Solutions Company"
+        description="Learn how Synplix Infotech, a Pune-based web development company, helps businesses grow with AI, automation, and modern technology solutions."
         path="/about"
+        keywords="about synplix, synplix infotech pune, web development company india, ai solutions, technology company pune"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "AboutPage",

@@ -11,9 +11,10 @@ const Index = () => {
   return (
     <Layout variant="light">
       <SEO
-        title="Synplix Infotech Services — Web, SaaS & Automation Partner in Pune"
-        description="Custom web apps, SaaS platforms, business automation and content systems for startups and SMBs. Pune-based, delivering globally."
+        title="Synplix — Web Development, SaaS & Automation Company in Pune, India"
+        description="Synplix Infotech is a leading web development company in Pune offering custom websites, SaaS platforms, business automation and content systems for startups and SMBs."
         path="/"
+        keywords="synplix, web development pune, saas development india, business automation, website design pune, software company india, digital agency pune"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",

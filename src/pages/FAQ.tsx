@@ -119,9 +119,10 @@ const FAQ = () => {
   return (
     <Layout variant="light">
       <SEO
-        title="FAQ — Answers Before the First Call | Synplix Infotech"
-        description="Frequently asked questions about Synplix web development, SaaS, content creation services, pricing, timelines, and process."
+        title="FAQ — Frequently Asked Questions | Synplix Infotech"
+        description="Get answers about Synplix Infotech's web development, SaaS, content creation services, pricing, timelines, and process."
         path="/faq"
+        keywords="synplix faq, web development questions, saas development faq, pricing faq, web development india"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "FAQPage",

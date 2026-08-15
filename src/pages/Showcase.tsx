@@ -75,9 +75,10 @@ const Showcase = () => {
   return (
     <Layout variant="light">
       <SEO
-        title="Showcase — Selected Work & Case Studies | Synplix Infotech"
-        description="A selection of SaaS platforms, e-commerce stores, restaurant websites, educational portals and web apps we've shipped for clients."
+        title="Showcase — Our Work & Case Studies | Synplix Infotech"
+        description="See what Synplix Infotech has built: SaaS platforms, e-commerce stores, restaurant websites, educational portals and custom web apps for clients."
         path="/showcase"
+        keywords="synplix portfolio, web development portfolio india, saas case studies, website examples, synplix work"
       />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">

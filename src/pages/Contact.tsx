@@ -5,9 +5,10 @@ const Contact = () => {
   return (
     <Layout hideFooter variant="light">
       <SEO
-        title="Contact — Start a Project | Synplix Infotech"
-        description="Tell us about your product, timeline and constraints. You'll get a written proposal within 48 hours of the call."
+        title="Contact Synplix Infotech — Start Your Project Today"
+        description="Get in touch with Synplix Infotech. Tell us about your project and receive a written proposal within 48 hours. Free 30-minute strategy call."
         path="/contact"
+        keywords="contact synplix, web development inquiry, start website project, free consultation, synplix contact"
       />
       <section className="min-h-screen bg-background text-foreground pt-32 pb-20">
         <div className="container">

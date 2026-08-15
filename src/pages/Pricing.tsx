@@ -80,9 +80,10 @@ const Pricing = () => {
   return (
     <Layout variant="light">
       <SEO
-        title="Pricing — Transparent Plans for Web, Content & SaaS | Synplix"
-        description="Clear, fixed-scope pricing for websites, content systems and SaaS builds. INR and USD, no hidden fees."
+        title="Pricing — Website Development & Content Plans | Synplix"
+        description="Transparent pricing for website development and content creation from Synplix Infotech. Starter plans from ₹4,999. Free strategy call included."
         path="/pricing"
+        keywords="synplix pricing, web development cost india, website design pricing, content creation pricing, affordable web development"
       />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">

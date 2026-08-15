@@ -7,9 +7,10 @@ const Services = () => {
   return (
     <Layout variant="light">
       <SEO
-        title="Services — Web, SaaS, Automation & Content | Synplix Infotech"
-        description="Four practices built to compound: custom web development, SaaS platforms, business automation, and content systems for growing teams."
+        title="Services — Web Development, SaaS, Automation & Content | Synplix"
+        description="Synplix Infotech offers four core services: custom web development, SaaS platform development, business automation, and content systems for growing teams in India."
         path="/services"
+        keywords="synplix services, web development services india, saas development, business automation, content management, web development pune"
       />
       <div className="bg-background text-foreground min-h-screen">
         <section className="container pt-40 pb-16">
