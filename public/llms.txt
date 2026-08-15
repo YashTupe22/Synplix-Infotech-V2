@@ -1,10 +1,10 @@
-# Synplix Infotech Services
+# Synplix Infotech
 
-> Synplix Infotech Services is a web development and product engineering partner for startups, SMBs and SaaS teams. Based in Pune, India, delivering globally.
+> Synplix Infotech is a technology company helping businesses in India adopt AI and modern technology solutions to improve their digital presence, automate work, and build better business processes.
 
 ## About
 
-Synplix builds custom web applications, SaaS platforms, business automation workflows, and content systems. We focus on predictable delivery, long-term scalability, and hands-on partnerships from discovery through production.
+Synplix Infotech helps Indian businesses adopt AI and modern technology to improve their digital presence, automate work and build better processes without making technology complicated. Based in Pune, Maharashtra, India. Remote-first, serving clients across India, the US and UK.
 
 ## Services
 
@@ -13,49 +13,51 @@ Synplix builds custom web applications, SaaS platforms, business automation work
 - **Business Automation**: Workflows and integrations that cut manual work across internal systems.
 - **Content Systems**: Structured content and growth-ready pages for marketing and product teams.
 
+### Solution Areas
+
+- Web Development
+- AI Solutions
+- Business Automation
+- SEO & Digital Growth
+- WhatsApp & Communication Automation
+
 ## How We Work
 
-A six-phase delivery model: Discovery & Strategy, Design & Prototyping, Development, Testing & QA, Launch & Deployment, Support & Growth.
+Six-phase delivery model: Discovery & Strategy, Design & Prototyping, Development, Testing & QA, Launch & Deployment, Support & Growth.
 
 ### Timelines
 
-- Marketing website: 2–4 weeks
-- MVP web app: 6–8 weeks
-- Full SaaS platform: 10–16 weeks
+- Marketing website: 2-4 weeks
+- MVP web app: 6-8 weeks
+- Full SaaS platform: 10-16 weeks
 - Proposal turnaround: 48 hours
 
 ## Showcase
 
 - **Synplix SaaS** (Beta): Multi-workspace management platform with billing and analytics.
 - **Applix Wear**: E-commerce apparel store for a direct-to-consumer fashion brand.
-- **CASE**: Student portfolio showcase platform — Code, Access, Share, Everywhere.
+- **CASE**: Student portfolio showcase platform - Code, Access, Share, Everywhere.
 - **The Black Sheep Bistro**: Restaurant website with menu, reservations, and reviews (Goa).
 - **RMDIOT**: Educational institution website for a polytechnic institute (5 departments, 50+ recruiters).
-- **Amora Café**: Café website with digital menu, online ordering, and table reservations (PCMC, Pune).
+- **Amora Cafe**: Cafe website with digital menu, online ordering, and table reservations (PCMC, Pune).
 
 ## Pricing
 
-### Webpage Design (one-time)
-- Starter: ₹8,000 (up to 5 pages)
-- Growth: ₹18,000 (up to 15 pages, highlighted)
-- Enterprise: Custom quote
+### Website Development (one-time)
+- **Starter**: Rs.4,999 (up to 5 pages) - Get your business online.
+- **Business**: Rs.9,999 (up to 10 pages) - Turn your website into a growth tool. Most popular.
+- **Professional**: Rs.14,999 (up to 20 pages) - Build a more powerful digital presence.
 
 ### Content Creation (monthly)
-- Basic: ₹5,000/month
-- Pro: ₹12,000/month (highlighted)
-- Agency: ₹25,000/month
+- **Basic**: Rs.5,000/month
+- **Pro**: Rs.12,000/month (most popular)
+- **Agency**: Rs.25,000/month
 
-### SaaS Subscription
-- Free: ₹0
-- Starter: ₹499/month
-- Pro: ₹999/month (highlighted)
-- Enterprise: ₹1,999/month
-
-Payment terms: 50% deposit before project commencement, balance due on completion or milestones. Invoices payable within 7 business days.
+Payment terms: 50% upfront, 50% before final deployment. Free 30-minute strategy call included. Written proposal within 48 hours.
 
 ## FAQ
 
-- Projects typically take 2–4 weeks (marketing site), 6–8 weeks (MVP), or 10–16 weeks (full SaaS).
+- Projects typically take 2-4 weeks (marketing site), 6-8 weeks (MVP), or 10-16 weeks (full SaaS).
 - Start by booking a free 30-minute strategy call. Written proposal within 48 hours.
 - 50% deposit required, balance on completion. Prices in INR unless specified.
 - Upon full payment, all custom code, designs and assets transfer to the client.
@@ -65,9 +67,28 @@ Payment terms: 50% deposit before project commencement, balance due on completio
 
 - Email: outreach@synplixinfotech.in
 - WhatsApp: https://wa.me/918668918164
+- Phone: +91-86689-18164
+- Office: Pune, Maharashtra, India
+- Hours: Mon-Fri, 09:00 - 18:00 IST
+
+## Social
+
 - LinkedIn: https://linkedin.com/company/synplix
 - Instagram: https://instagram.com/synplix.in
 - SaaS Product: https://saas.synplixinfotech.in
+
+## Pages
+
+- [Home](https://synplixinfotech.in/)
+- [About](https://synplixinfotech.in/about)
+- [Services](https://synplixinfotech.in/services)
+- [Showcase](https://synplixinfotech.in/showcase)
+- [Pricing](https://synplixinfotech.in/pricing)
+- [How We Work](https://synplixinfotech.in/how-we-work)
+- [FAQ](https://synplixinfotech.in/faq)
+- [Contact](https://synplixinfotech.in/contact)
+- [Privacy Policy](https://synplixinfotech.in/privacy-policy)
+- [Terms of Service](https://synplixinfotech.in/terms)
 
 ## Technical Details
 
@@ -75,7 +96,7 @@ Payment terms: 50% deposit before project commencement, balance due on completio
 - Hosting: Vercel
 - Location: Pune, Maharashtra, India
 
-## Legal
+## Resources
 
-- Privacy Policy: https://synplixinfotech.in/privacy-policy
-- Terms of Service: https://synplixinfotech.in/terms
+- [Sitemap](https://synplixinfotech.in/sitemap.xml)
+- [Robots.txt](https://synplixinfotech.in/robots.txt)
